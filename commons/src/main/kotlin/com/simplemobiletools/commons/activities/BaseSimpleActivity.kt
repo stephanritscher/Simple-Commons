@@ -1136,7 +1136,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     }
 
     private fun getExportSettingsFilename(): String {
-        val appName = baseConfig.appId.removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
+        val appName = baseConfig.pkgId().removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
         return "$appName-settings_${getCurrentFormattedDateTime()}"
     }
 

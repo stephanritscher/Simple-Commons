@@ -40,7 +40,8 @@ class ManageBlockedNumbersActivity : BaseSimpleActivity(), RefreshRecyclerViewLi
         updateTextColors(manage_blocked_numbers_wrapper)
         updatePlaceholderTexts()
 
-        val blockTitleRes = if (baseConfig.appId.startsWith("com.simplemobiletools.dialer")) R.string.block_unknown_calls else R.string.block_unknown_messages
+        val blockTitleRes = if (baseConfig.pkgId().startsWith("com.simplemobiletools.dialer")) R.string.block_unknown_calls else R.string
+            .block_unknown_messages
 
         block_unknown.apply {
             setText(blockTitleRes)
@@ -262,7 +263,7 @@ class ManageBlockedNumbersActivity : BaseSimpleActivity(), RefreshRecyclerViewLi
     }
 
     private fun maybeSetDefaultCallerIdApp() {
-        if (isQPlus() && baseConfig.appId.startsWith("com.simplemobiletools.dialer")) {
+        if (isQPlus() && baseConfig.pkgId().startsWith("com.simplemobiletools.dialer")) {
             setDefaultCallerIdApp()
         }
     }

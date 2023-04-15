@@ -651,9 +651,9 @@ fun Context.saveExifRotation(exif: ExifInterface, degrees: Int) {
     exif.saveAttributes()
 }
 
-fun Context.getLaunchIntent() = packageManager.getLaunchIntentForPackage(baseConfig.appId)
+fun Context.getLaunchIntent() = packageManager.getLaunchIntentForPackage(baseConfig.pkgId())
 
-fun Context.getCanAppBeUpgraded() = proPackages.contains(baseConfig.appId.removeSuffix(".debug").removePrefix("com.simplemobiletools."))
+fun Context.getCanAppBeUpgraded() = proPackages.contains(baseConfig.pkgId().removeSuffix(".debug").removePrefix("com.simplemobiletools."))
 
 fun Context.getProUrl() = "https://play.google.com/store/apps/details?id=${baseConfig.appId.removeSuffix(".debug")}.pro"
 

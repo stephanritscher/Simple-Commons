@@ -181,7 +181,7 @@ class PropertiesDialog() {
                 return
             }
 
-            if (mActivity.baseConfig.appId.removeSuffix(".debug") == "com.simplemobiletools.filemanager.pro") {
+            if (mActivity.baseConfig.pkgId().removeSuffix(".debug") == "com.simplemobiletools.filemanager.pro") {
                 addProperty(R.string.md5, "…", R.id.properties_md5)
                 ensureBackgroundThread {
                     val md5 = if (mActivity.isRestrictedSAFOnlyRoot(path)) {

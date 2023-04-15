@@ -376,7 +376,7 @@ class AboutActivity : BaseSimpleActivity() {
             about_other_layout.addView(this)
 
             setOnClickListener {
-                val appId = baseConfig.appId.removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
+                val appId = baseConfig.pkgId().removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
                 val url = "https://simplemobiletools.com/privacy/$appId.txt"
                 launchViewIntent(url)
             }

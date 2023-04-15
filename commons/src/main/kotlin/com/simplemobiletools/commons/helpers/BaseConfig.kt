@@ -339,6 +339,8 @@ open class BaseConfig(val context: Context) {
         get() = prefs.getString(APP_ID, "")!!
         set(appId) = prefs.edit().putString(APP_ID, appId).apply()
 
+    fun pkgId() = prefs.getString(APP_ID, "")!!.replace("de.ritscher", "com")
+
     var initialWidgetHeight: Int
         get() = prefs.getInt(INITIAL_WIDGET_HEIGHT, 0)
         set(initialWidgetHeight) = prefs.edit().putInt(INITIAL_WIDGET_HEIGHT, initialWidgetHeight).apply()
