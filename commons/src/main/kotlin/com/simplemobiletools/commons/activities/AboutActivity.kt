@@ -12,7 +12,6 @@ import androidx.core.net.toUri
 import androidx.core.view.isEmpty
 import com.simplemobiletools.commons.R
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
-import com.simplemobiletools.commons.dialogs.RateStarsDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
@@ -67,15 +66,9 @@ class AboutActivity : BaseSimpleActivity() {
 
         setupFAQ()
         setupEmail()
-        setupRateUs()
-        setupInvite()
+        setupUpstream()
         setupContributors()
-        setupDonate()
-        setupFacebook()
         setupGitHub()
-        setupReddit()
-        setupTelegram()
-        setupMoreApps()
         setupWebsite()
         setupPrivacyPolicy()
         setupLicense()
@@ -145,11 +138,7 @@ class AboutActivity : BaseSimpleActivity() {
         val separator = "------------------------------"
         val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
 
-        val address = if (packageName.startsWith("com.simplemobiletools")) {
-            getString(R.string.my_email)
-        } else {
-            getString(R.string.my_fake_email)
-        }
+        val address = getString(R.string.my_email)
 
         val selectorIntent = Intent(ACTION_SENDTO)
             .setData("mailto:$address".toUri())
@@ -174,59 +163,13 @@ class AboutActivity : BaseSimpleActivity() {
         }
     }
 
-    private fun setupRateUs() {
-        if (resources.getBoolean(R.bool.hide_google_relations) || resources.getBoolean(R.bool.hide_all_external_links)) {
-            return
-        }
-
+    private fun setupUpstream() {
         inflater?.inflate(R.layout.item_about, null)?.apply {
-            setupAboutItem(this, R.drawable.ic_star_vector, R.string.rate_us)
+            setupAboutItem(this, R.drawable.ic_link_vector, R.string.upstream)
             about_help_us_layout.addView(this)
 
             setOnClickListener {
-                if (baseConfig.wasBeforeRateShown) {
-                    launchRateUsPrompt()
-                } else {
-                    baseConfig.wasBeforeRateShown = true
-                    val msg = "${getString(R.string.before_rate_read_faq)}\n\n${getString(R.string.make_sure_latest)}"
-                    ConfirmationAdvancedDialog(this@AboutActivity, msg, 0, R.string.read_faq, R.string.skip) { success ->
-                        if (success) {
-                            launchFAQActivity()
-                        } else {
-                            launchRateUsPrompt()
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private fun launchRateUsPrompt() {
-        if (baseConfig.wasAppRated) {
-            redirectToRateUs()
-        } else {
-            RateStarsDialog(this@AboutActivity)
-        }
-    }
-
-    private fun setupInvite() {
-        if (resources.getBoolean(R.bool.hide_google_relations) || resources.getBoolean(R.bool.hide_all_external_links)) {
-            return
-        }
-
-        inflater?.inflate(R.layout.item_about, null)?.apply {
-            setupAboutItem(this, R.drawable.ic_add_person_vector, R.string.invite_friends)
-            about_help_us_layout.addView(this)
-
-            setOnClickListener {
-                val text = String.format(getString(R.string.share_text), appName, getStoreUrl())
-                Intent().apply {
-                    action = ACTION_SEND
-                    putExtra(EXTRA_SUBJECT, appName)
-                    putExtra(EXTRA_TEXT, text)
-                    type = "text/plain"
-                    startActivity(createChooser(this, getString(R.string.invite_via)))
-                }
+                launchViewIntent("https://www.simplemobiletools.com")
             }
         }
     }
@@ -243,43 +186,6 @@ class AboutActivity : BaseSimpleActivity() {
         }
     }
 
-    private fun setupDonate() {
-        if (resources.getBoolean(R.bool.show_donate_in_about) && !resources.getBoolean(R.bool.hide_all_external_links)) {
-            inflater?.inflate(R.layout.item_about, null)?.apply {
-                setupAboutItem(this, R.drawable.ic_dollar_vector, R.string.donate)
-                about_help_us_layout.addView(this)
-
-                setOnClickListener {
-                    launchViewIntent(getString(R.string.donate_url))
-                }
-            }
-        }
-    }
-
-    private fun setupFacebook() {
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            return
-        }
-
-        inflater?.inflate(R.layout.item_about, null)?.apply {
-            about_item_icon.setImageResource(R.drawable.ic_facebook_vector)
-            about_item_label.setText(R.string.facebook)
-            about_item_label.setTextColor(textColor)
-            about_social_layout.addView(this)
-
-            setOnClickListener {
-                var link = "https://www.facebook.com/simplemobiletools"
-                try {
-                    packageManager.getPackageInfo("com.facebook.katana", 0)
-                    link = "fb://page/150270895341774"
-                } catch (ignored: Exception) {
-                }
-
-                launchViewIntent(link)
-            }
-        }
-    }
-
     private fun setupGitHub() {
         if (resources.getBoolean(R.bool.hide_all_external_links)) {
             return
@@ -292,61 +198,7 @@ class AboutActivity : BaseSimpleActivity() {
             about_social_layout.addView(this)
 
             setOnClickListener {
-                launchViewIntent("https://github.com/SimpleMobileTools")
-            }
-        }
-    }
-
-    private fun setupReddit() {
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            return
-        }
-
-        inflater?.inflate(R.layout.item_about, null)?.apply {
-            about_item_icon.setImageResource(R.drawable.ic_reddit_vector)
-            about_item_label.setText(R.string.reddit)
-            about_item_label.setTextColor(textColor)
-            about_social_layout.addView(this)
-
-            setOnClickListener {
-                launchViewIntent("https://www.reddit.com/r/SimpleMobileTools")
-            }
-        }
-    }
-
-    private fun setupTelegram() {
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            if (about_social_layout.isEmpty()) {
-                about_social.beGone()
-                about_social_divider.beGone()
-            }
-
-            return
-        }
-
-        inflater?.inflate(R.layout.item_about, null)?.apply {
-            about_item_icon.setImageResource(R.drawable.ic_telegram_vector)
-            about_item_label.setText(R.string.telegram)
-            about_item_label.setTextColor(textColor)
-            about_social_layout.addView(this)
-
-            setOnClickListener {
-                launchViewIntent("https://t.me/SimpleMobileTools")
-            }
-        }
-    }
-
-    private fun setupMoreApps() {
-        if (resources.getBoolean(R.bool.hide_google_relations)) {
-            return
-        }
-
-        inflater?.inflate(R.layout.item_about, null)?.apply {
-            setupAboutItem(this, R.drawable.ic_heart_vector, R.string.more_apps_from_us)
-            about_other_layout.addView(this)
-
-            setOnClickListener {
-                launchMoreAppsFromUsIntent()
+                launchViewIntent("https://github.com/stephanritscher")
             }
         }
     }
@@ -361,7 +213,7 @@ class AboutActivity : BaseSimpleActivity() {
             about_other_layout.addView(this)
 
             setOnClickListener {
-                launchViewIntent("https://simplemobiletools.com/")
+                launchViewIntent("https://github.com/stephanritscher/Simple-Contacts")
             }
         }
     }
@@ -376,7 +228,7 @@ class AboutActivity : BaseSimpleActivity() {
             about_other_layout.addView(this)
 
             setOnClickListener {
-                val appId = baseConfig.pkgId().removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
+                val appId = baseConfig.pkgId().removeSuffix(".debug").removeSuffix(".pro").removePrefix("de.ritscher.simplemobiletools.")
                 val url = "https://simplemobiletools.com/privacy/$appId.txt"
                 launchViewIntent(url)
             }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="package_name">com.simplemobiletools.commons</string>
+    <string name="package_name">de.ritscher.simplemobiletools.commons</string>
     <string name="pro">Pro</string>
     <string name="simple_commons">Simple Commons</string>
     <string name="progress">%1$s / %2$s</string>
@@ -11,8 +11,8 @@
 
     <!-- About -->
     <string name="two_string_placeholder">%1$s%2$s</string>
-    <string name="my_website">\nhttps://simplemobiletools.com</string>
-    <string name="my_email">hello@simplemobiletools.com</string>
+    <string name="my_website">\nhttps://github.com/stephanritscher/Simple-Contacts</string>
+    <string name="my_email">stephan.ritscher@gmail.com</string>
     <string name="my_fake_email">noreply@simplemobiletools.com</string>
     <string name="facebook">Facebook</string>
     <string name="reddit">Reddit</string>
@@ -21,7 +21,8 @@
     <string name="viber">Viber</string>
 
     <!-- Contributors -->
-    <string name="contributors_developers">Aga-C, AlbertoPellitteri, Alfavio, connyduck, correia55, dagkalis, DaPa, ForgottenUmbrella, KryptKode, Naveen3Singh, qwertyfinger</string>
+    <string name="contributors_developers">Aga-C, AlbertoPellitteri, Alfavio, connyduck, correia55, dagkalis, DaPa, ForgottenUmbrella,
+        Glaser-Martin, KryptKode, Naveen3Singh, qwertyfinger</string>
     <string name="contributors_other_help"></string>
     <string name="translators_arabic">karmac2015, unofficial-hima</string>
     <string name="translators_azerbaijani">Gozzwip</string>
