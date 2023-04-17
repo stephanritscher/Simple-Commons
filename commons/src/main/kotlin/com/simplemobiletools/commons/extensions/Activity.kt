@@ -59,7 +59,7 @@ fun Activity.appLaunched(appId: String) {
         val primaryColor = resources.getColor(R.color.color_primary)
         if (baseConfig.appIconColor != primaryColor) {
             getAppIconColors().forEachIndexed { index, color ->
-                toggleAppIconColor(appId, index, color, false)
+                toggleAppIconColor(appId, baseConfig.pkgId(), index, color, false)
             }
 
             val defaultClassName = "${baseConfig.pkgId().removeSuffix(".debug")}.activities.SplashActivity"
