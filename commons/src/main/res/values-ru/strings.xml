@@ -5,7 +5,7 @@
     <string name="back">Назад</string>
     <string name="nothing">Ничего</string>
     <string name="later">Позже</string>
-    <string name="save_as">Сохранить как</string>
+    <string name="save_as">Сохранить как…</string>
     <string name="file_saved">Файл сохранён</string>
     <string name="invalid_file_format">Неправильный формат файла</string>
     <string name="out_of_memory_error">Память переполнена</string>
@@ -419,7 +419,7 @@
     <string name="use_custom_sorting">Произвольная сортировка</string>
     <string name="change_order">Изменить порядок</string>
     <!-- Confirmation dialog -->
-    <string name="proceed_with_deletion">Подтверждение удаления</string>
+    <string name="proceed_with_deletion">Вы точно хотите удалить это\?</string>
     <string name="deletion_confirmation">Удалить %s?</string>
     <string name="deletion_confirmation_short">Удалить %s\?</string>
     <!-- Are you sure you want to delete 5 items? -->
@@ -748,6 +748,17 @@
     <string name="no_entries_for_importing">Нечего импортировать</string>
     <string name="no_new_entries_for_importing">Не найдено новых записей для импорта</string>
     <string name="no_entries_for_exporting">Нечего экспортировать</string>
+    <string name="backups">Резервные копии</string>
+    <string name="enable_automatic_backups">Использовать авторезервирование</string>
+    <string name="manage_automatic_backups">Управление авторезервированием</string>
+    <string name="date_time_pattern_info">Можно использовать следующие переменные для автоименования файла:
+\n
+\n%Y — год
+\n%M — месяц
+\n%D — день
+\n%h — час
+\n%m — минута
+\n%s — секунда</string>
     <!-- OTG devices -->
     <string name="usb">USB</string>
     <string name="usb_detected">К устройству подключён USB-накопитель, необходимо убедиться, что файлы на нём отображаются правильно. Для этого необходимо предоставить дополнительные разрешения.</string>
@@ -820,6 +831,16 @@
     <string name="more_info">Подробнее</string>
     <string name="upgrade">Обновить</string>
     <string name="upgrade_calendar">Локально сохранённые события необходимо перенести вручную через экспорт и последующий импорт ics-файла. Кнопки экспорта/импорта находятся в главном меню.</string>
+    <string name="upgraded_from_free_gallery">Привет,
+\n
+\nпохоже, вы только что обновились с бесплатной версии. Когда вы будете довольны pro-версией и, возможно, перенесёте в неё свои данные, можно будет удалить бесплатную версию, чтобы избежать случайного запуска, поскольку она вам больше не понадобится.
+\n
+\nСпасибо!</string>
+    <string name="upgraded_to_pro_gallery">Привет,
+\n
+\nпохоже, что у вас уже есть pro-версия приложения. Когда вы будете довольны им и, возможно, перенесёте в него свои данные, можно будет удалить это, чтобы избежать случайного запуска, поскольку бесплатная версия вам больше не понадобится.
+\n
+\nСпасибо!</string>
     <string name="upgraded_from_free">Привет,
 \n
 \nпохоже, что вы обновились с бесплатного приложения. Если вы будете довольны работой этого приложения и, возможно, перенесёте в него свои данные, то можете удалить старую бесплатную версию, чтобы избежать её случайного запуска, поскольку она вам больше не понадобится.
@@ -1117,7 +1138,7 @@
     <string name="trial_expired">Пробный период истёк</string>
     <string name="start_free_trial">Начать пробный период</string>
     <string name="trial_expires_soon">Пробный период скоро истечёт.</string>
-    <string name="unlock_for_one_final_day">Unlock the app for one final day</string>
+    <string name="unlock_for_one_final_day">Разблокировать приложение на один последний день</string>
     <string name="welcome_to_app_name">Добро пожаловать в %s!</string>
     <string name="trial_start_description">Благодарим вас за использование нашего приложения. Вы можете использовать эту разблокированную версию <font color="#FFFFFF">%d дней</font>. После окончания пробного периода рассмотрите возможность обновления до Pro-версии. Она имеет огромное количество новых функций, современный дизайн, отсутствие рекламы и множество других улучшений.
 \n
