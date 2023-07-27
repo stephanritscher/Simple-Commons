@@ -75,6 +75,7 @@
     <string name="updating">Aktualizowanie…</string>
     <string name="phone_storage">Pamięć telefonu</string>
     <string name="phone_storage_hidden">Pamięć telefonu (niewidoczne dla innych aplikacji)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Urodziny</string>
     <string name="anniversary">Rocznica</string>
@@ -159,8 +160,15 @@
     <string name="no_contacts_permission">Wymagane jest uprawnienie „Kontakty”</string>
     <string name="no_camera_permissions">Wymagane jest uprawnienie „Aparat”</string>
     <string name="no_audio_permissions">Wymagane jest uprawnienie „Mikrofon”</string>
-    <string name="no_post_notifications_permissions">Wymagane jest uprawnienie „Powiadomienia”</string>
     <string name="no_permission">Brak uprawnienia</string>
+    <string name="allow_notifications_reminders">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać przypomnień.</string>
+    <string name="allow_notifications_files">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać paska postępu.</string>
+    <string name="allow_notifications_music_player">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła odtwarzać utworów.</string>
+    <string name="allow_notifications_voice_recorder">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła nagrywać dźwięku.</string>
+    <string name="allow_notifications_incoming_calls">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać połączeń przychodzących.</string>
+    <string name="allow_notifications_incoming_messages">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać wiadomości przychodzących.</string>
+    <string name="grant_permission">Nadaj uprawnienie</string>
+    <string name="permission_required">Wymagane uprawnienie</string>
     <!-- Renaming -->
     <string name="rename_file">Zmień nazwę pliku</string>
     <string name="rename_folder">Zmień nazwę folderu</string>
@@ -756,6 +764,7 @@
     <string name="show_the_recycle_bin">Pokaż kosz</string>
     <string name="hide_the_recycle_bin">Ukryj kosz</string>
     <string name="open_the_recycle_bin">Otwórz kosz</string>
+    <string name="skip_the_recycle_bin">Pomiń kosz, usuń pliki bezpośrednio</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">Przenoszenie %d elementu do kosza</item>
         <item quantity="few">Przenoszenie %d elementów do kosza</item>
@@ -877,21 +886,21 @@
 \nWygląda na to, że masz już także wersję Pro aplikacji. Gdy będziesz z niej zadowolony(-a) i być może przeniesiesz swoje dane, możesz odinstalować tę, aby uniknąć przypadkowego uruchomienia, ponieważ nie będziesz jej już potrzebować.
 \n
 \nDzięki!</string>
-    <string name="upgraded_to_pro_calendar">Witaj,
+    <string name="upgraded_from_free_calendar">Witaj,
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli chcesz przenieść przechowywane lokalnie wydarzenia, musisz zrobić to ręcznie, eksportując je do pliku .ics w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n
 \nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować.
 \n
 \nDzięki!</string>
-    <string name="upgraded_to_pro_contacts">Witaj,
+    <string name="upgraded_from_free_contacts">Witaj,
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli masz jakieś kontakty przechowywane w „%s”, musisz przenieść je ręcznie, eksportując do pliku .vcf w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n
 \nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować.
 \n
 \nDzięki!</string>
-    <string name="upgraded_to_pro_notes">Witaj,
+    <string name="upgraded_from_free_notes">Witaj,
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli chcesz przenieść swoje notatki, musisz zrobić to ręcznie, eksportując je do pliku w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n

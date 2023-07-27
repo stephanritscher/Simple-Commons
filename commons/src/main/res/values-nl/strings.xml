@@ -75,6 +75,7 @@
     <string name="updating">Bijwerken…</string>
     <string name="phone_storage">Telefoonopslag</string>
     <string name="phone_storage_hidden">Telefoonopslag (niet zichtbaar voor andere apps)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Verjaardag</string>
     <string name="anniversary">Jubileum</string>
@@ -157,8 +158,15 @@
     <string name="no_contacts_permission">Recht voor contacten is vereist</string>
     <string name="no_camera_permissions">Recht voor camera is vereist</string>
     <string name="no_audio_permissions">Recht voor audio is vereist</string>
-    <string name="no_post_notifications_permissions">Recht voor het plaatsen van meldingen is vereist</string>
     <string name="no_permission">Geen toegang</string>
+    <string name="allow_notifications_reminders">Deze app heeft het recht om meldingen te tonen nodig om herinneringen te kunnen laten zien.</string>
+    <string name="allow_notifications_files">Deze app heeft het recht om meldingen te tonen nodig om een voortgangsindicator te kunnen weergeven.</string>
+    <string name="allow_notifications_music_player">Deze app heeft het recht om meldingen te tonen nodig om nummers te kunnen afspelen.</string>
+    <string name="allow_notifications_voice_recorder">Deze app heeft het recht om meldingen te tonen nodig om geluid te kunnen opnemen.</string>
+    <string name="allow_notifications_incoming_calls">Deze app heeft het recht om meldingen te tonen nodig om te kunnen waarschuwen bij inkomende gesprekken.</string>
+    <string name="allow_notifications_incoming_messages">Deze app heeft het recht om meldingen te tonen nodig om te kunnen waarschuwen bij nieuwe berichten.</string>
+    <string name="grant_permission">Toestemming geven</string>
+    <string name="permission_required">Toestemming vereist</string>
     <!-- Renaming -->
     <string name="rename_file">Bestand hernoemen</string>
     <string name="rename_folder">Map hernoemen</string>
@@ -687,6 +695,7 @@
     <string name="show_the_recycle_bin">De prullenbak tonen</string>
     <string name="hide_the_recycle_bin">De prullenbak verbergen</string>
     <string name="open_the_recycle_bin">Prullenbak openen</string>
+    <string name="skip_the_recycle_bin">Bestanden niet naar de prullenbak verplaatsen, maar direct verwijderen</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">%d item naar de prullenbak verplaatsen</item>
         <item quantity="other">%d items naar de prullenbak verplaatsen</item>
@@ -787,16 +796,16 @@
     <string name="upgrade">Upgraden</string>
     <string name="upgrade_calendar">Lokaal opgeslagen agenda\'s migreren kan alleen door exporteren naar een .ics bestand, en dan weer importeren. Deze functies zijn te vinden in het menu van de app.</string>
     <string name="upgraded_from_free_gallery">De gratis versie van deze app is ook (nog) geïnstalleerd. Als de Pro-versie bevalt en de instellingen en favorieten zijn overgezet, dan kan de gratis versie worden verwijderd.</string>
-    <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_to_pro_gallery">De Pro-versie van deze app is ook al geïnstalleerd. Als de Pro-versie bevalt en de instellingen en favorieten (indien gewenst) zijn overgezet vanuit deze versie, dan kan deze app worden verwijderd.</string>
     <string name="upgraded_from_free">De gratis versie van deze app is ook (nog) geïnstalleerd. Als de Pro-versie bevalt en de gegevens zijn overgezet, dan kan de gratis versie worden verwijderd.</string>
     <string name="upgraded_to_pro">De Pro-versie van deze app is ook al geïnstalleerd. Als de Pro-versie bevalt en de app-gegevens (indien gewenst) zijn overgezet vanuit deze versie, dan kan deze app worden verwijderd.</string>
-    <string name="upgraded_to_pro_calendar">De gratis versie van deze app is ook (nog) geïnstalleerd. Lokaal opgeslagen afspraken uit de gratis versie zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een .ics-bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
+    <string name="upgraded_from_free_calendar">De gratis versie van deze app is ook (nog) geïnstalleerd. Lokaal opgeslagen afspraken uit de gratis versie zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een .ics-bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
 \n
 \nAls de Pro-versie bevalt, kan de gratis versie worden verwijderd.</string>
-    <string name="upgraded_to_pro_contacts">De gratis versie van deze app is ook (nog) geïnstalleerd. Eventueel opgeslagen contacten in \"%s\" zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een .vcf-bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
+    <string name="upgraded_from_free_contacts">De gratis versie van deze app is ook (nog) geïnstalleerd. Eventueel opgeslagen contacten in \"%s\" zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een .vcf-bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
 \n
 \nAls de Pro-versie bevalt, kan de gratis versie worden verwijderd.</string>
-    <string name="upgraded_to_pro_notes">De gratis versie van deze app is ook (nog) geïnstalleerd. De notities uit de gratis versie zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
+    <string name="upgraded_from_free_notes">De gratis versie van deze app is ook (nog) geïnstalleerd. De notities uit de gratis versie zullen handmatig moeten worden overgezet door ze eerst te exporteren naar een bestand en ze vervolgens weer te importeren in de Pro-versie. Beide functies zijn te vinden in het menu.
 \n
 \nAls de Pro-versie bevalt, kan de gratis versie worden verwijderd.</string>
     <!-- About -->

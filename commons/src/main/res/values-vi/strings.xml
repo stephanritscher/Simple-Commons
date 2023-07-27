@@ -72,9 +72,10 @@
     <string name="choose_file">Choose file</string>
     <string name="record_audio">Ghi âm</string>
     <string name="record_video">Quay video</string>
-    <string name="updating">Updating…</string>
-    <string name="phone_storage">Phone storage</string>
-    <string name="phone_storage_hidden">Phone storage (not visible by other apps)</string>
+    <string name="updating">Đang cập nhật…</string>
+    <string name="phone_storage">Bộ nhớ điện thoại</string>
+    <string name="phone_storage_hidden">Bộ nhớ điện thoại (không hiển thị bởi các ứng dụng khác)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Ngày sinh nhật</string>
     <string name="anniversary">Dịp kỉ niệm</string>
@@ -130,11 +131,11 @@
     <string name="search">Tìm kiếm</string>
     <string name="search_in_placeholder">Search in %s</string>
     <string name="type_2_characters">Nhập ít nhất 2 ký tự để bắt đầu tìm kiếm.</string>
-    <string name="search_contacts">Search contacts</string>
-    <string name="search_favorites">Search favorites</string>
+    <string name="search_contacts">Tìm liên hệ</string>
+    <string name="search_favorites">Tìm kiếm yêu thích</string>
     <string name="search_apps">Search apps</string>
     <string name="search_events">Search events</string>
-    <string name="search_groups">Search groups</string>
+    <string name="search_groups">Tìm nhóm</string>
     <string name="search_history">Search history</string>
     <string name="search_calls">Search calls</string>
     <string name="search_files">Search files</string>
@@ -157,8 +158,15 @@
     <string name="no_contacts_permission">Cần quyền truy cập danh bạ</string>
     <string name="no_camera_permissions">Cần quyền truy cập máy ảnh</string>
     <string name="no_audio_permissions">Cần quyền truy cập âm thanh</string>
-    <string name="no_post_notifications_permissions">Permission to post notifications is required</string>
     <string name="no_permission">No permission</string>
+    <string name="allow_notifications_reminders">You must allow the app displaying notifications, else it cannot show reminders.</string>
+    <string name="allow_notifications_files">You must allow the app displaying notifications, else it cannot show the progress bar.</string>
+    <string name="allow_notifications_music_player">You must allow the app displaying notifications, else it cannot play songs.</string>
+    <string name="allow_notifications_voice_recorder">You must allow the app displaying notifications, else it cannot record audio.</string>
+    <string name="allow_notifications_incoming_calls">You must allow the app displaying notifications, else it cannot show incoming calls.</string>
+    <string name="allow_notifications_incoming_messages">You must allow the app displaying notifications, else it cannot show incoming messages.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_required">Permission Required</string>
     <!-- Renaming -->
     <string name="rename_file">Đổi tên tập tin</string>
     <string name="rename_folder">Đổi tên thư mục</string>
@@ -372,7 +380,7 @@
     <string name="shortcut">Shortcut</string>
     <string name="create_shortcut">Tạo phím tắt</string>
     <string name="create_shortcut_pro">Tạo phím tắt (Pro)</string>
-    <string name="add_number_to_contact">Add number to contact</string>
+    <string name="add_number_to_contact">Thêm số để liên hệ</string>
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
@@ -665,7 +673,7 @@
     <string name="exclude">Loại trừ</string>
     <string name="exclude_folder">Exclude folder</string>
     <string name="excluded_folders">Các thư mục bị loại trừ</string>
-    <string name="excluded">(không bao gồm)</string>
+    <string name="excluded">(loại trừ)</string>
     <string name="manage_excluded_folders">Quản lý các thư mục loại trừ</string>
     <string name="remove_all">Xóa tất cả</string>
     <string name="remove_all_description">Xóa tất cả các thư mục khỏi danh sách loại trừ\? Điều này sẽ không xóa các thư mục.</string>
@@ -693,6 +701,7 @@
     <string name="show_the_recycle_bin">Hiển thị thùng rác</string>
     <string name="hide_the_recycle_bin">Ẩn thùng rác</string>
     <string name="open_the_recycle_bin">Open the Recycle Bin</string>
+    <string name="skip_the_recycle_bin">Skip the Recycle Bin, delete files directly</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">Moving %d item into the Recycle Bin</item>
         <item quantity="other">Moving %d items into the Recycle Bin</item>
@@ -789,9 +798,9 @@
     <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
     <string name="upgraded_from_free">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your data over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
     <string name="upgraded_to_pro">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your data over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_calendar">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your locally stored events over, you have to do it manually by exporting them into an .ics file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_contacts">Hello,\n\nseems like you just upgraded from the free version. If you had any contacts stored under \"%s\", you have to migrate them manually by exporting in a .vcf file from the free app version and importing here through the top menu.\n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_notes">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your notes over, you have to do it manually by exporting them into a file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_calendar">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your locally stored events over, you have to do it manually by exporting them into an .ics file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_contacts">Hello,\n\nseems like you just upgraded from the free version. If you had any contacts stored under \"%s\", you have to migrate them manually by exporting in a .vcf file from the free app version and importing here through the top menu.\n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_notes">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your notes over, you have to do it manually by exporting them into a file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
     <!-- About -->
     <string name="about">Thông tin</string>
     <string name="website">Website</string>

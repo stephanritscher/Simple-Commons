@@ -548,6 +548,12 @@ fun BaseSimpleActivity.launchCallIntent(recipient: String, handle: PhoneAccountH
                 putExtra(TelecomManager.EXTRA_PHONE_ACCOUNT_HANDLE, handle)
             }
 
+            if (isDefaultDialer()) {
+                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.simplemobiletools.dialer.debug" else "com.simplemobiletools.dialer"
+                val className = "com.simplemobiletools.dialer.activities.DialerActivity"
+                setClassName(packageName, className)
+            }
+
             launchActivityIntent(this)
         }
     }

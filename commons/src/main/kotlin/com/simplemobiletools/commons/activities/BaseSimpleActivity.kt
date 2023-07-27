@@ -150,6 +150,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
                 hideKeyboard()
                 finish()
             }
+
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -202,7 +203,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         mainCoordinatorLayout: CoordinatorLayout?,
         nestedView: View?,
         useTransparentNavigation: Boolean,
-        useTopSearchMenu: Boolean
+        useTopSearchMenu: Boolean,
     ) {
         this.mainCoordinatorLayout = mainCoordinatorLayout
         this.nestedView = nestedView
@@ -220,8 +221,9 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
             if (navigationBarHeight > 0 || isUsingGestureNavigation()) {
                 window.decorView.systemUiVisibility = window.decorView.systemUiVisibility.addBit(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
                 updateTopBottomInsets(statusBarHeight, navigationBarHeight)
+                // Don't touch this. Window Inset API often has a domino effect and things will most likely break.
                 onApplyWindowInsets {
-                    val insets = it.getInsets(WindowInsetsCompat.Type.systemBars())
+                    val insets = it.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
                     updateTopBottomInsets(insets.top, insets.bottom)
                 }
             } else {
@@ -231,11 +233,11 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateTopBottomInsets(statusBarHeight: Int, navigationBarHeight: Int) {
+    private fun updateTopBottomInsets(top: Int, bottom: Int) {
         nestedView?.run {
-            setPadding(paddingLeft, paddingTop, paddingRight, navigationBarHeight)
+            setPadding(paddingLeft, paddingTop, paddingRight, bottom)
         }
-        (mainCoordinatorLayout?.layoutParams as? FrameLayout.LayoutParams)?.topMargin = statusBarHeight
+        (mainCoordinatorLayout?.layoutParams as? FrameLayout.LayoutParams)?.topMargin = top
     }
 
     // colorize the top toolbar and statusbar at scrolling down a bit
@@ -957,7 +959,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
                     if (granted) {
                         CopyMoveTask(this, isCopyOperation, copyPhotoVideoOnly, it, copyMoveListener, copyHidden).execute(pair)
                     } else {
-                        toast(R.string.no_post_notifications_permissions, Toast.LENGTH_LONG)
+                        PermissionRequiredDialog(this, R.string.allow_notifications_files)
                     }
                 }
             }
@@ -978,19 +980,25 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
 
         val file = files[index]
         val newFileDirItem = FileDirItem("$destinationPath/${file.name}", file.name, file.isDirectory)
-        if (getDoesFilePathExist(newFileDirItem.path)) {
-            FileConflictDialog(this, newFileDirItem, files.size > 1) { resolution, applyForAll ->
-                if (applyForAll) {
-                    conflictResolutions.clear()
-                    conflictResolutions[""] = resolution
-                    checkConflicts(files, destinationPath, files.size, conflictResolutions, callback)
-                } else {
-                    conflictResolutions[newFileDirItem.path] = resolution
+        ensureBackgroundThread {
+            if (getDoesFilePathExist(newFileDirItem.path)) {
+                runOnUiThread {
+                    FileConflictDialog(this, newFileDirItem, files.size > 1) { resolution, applyForAll ->
+                        if (applyForAll) {
+                            conflictResolutions.clear()
+                            conflictResolutions[""] = resolution
+                            checkConflicts(files, destinationPath, files.size, conflictResolutions, callback)
+                        } else {
+                            conflictResolutions[newFileDirItem.path] = resolution
+                            checkConflicts(files, destinationPath, index + 1, conflictResolutions, callback)
+                        }
+                    }
+                }
+            } else {
+                runOnUiThread {
                     checkConflicts(files, destinationPath, index + 1, conflictResolutions, callback)
                 }
             }
-        } else {
-            checkConflicts(files, destinationPath, index + 1, conflictResolutions, callback)
         }
     }
 

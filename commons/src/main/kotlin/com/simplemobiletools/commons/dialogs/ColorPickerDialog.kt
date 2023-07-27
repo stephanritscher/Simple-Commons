@@ -15,7 +15,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.isQPlus
 import com.simplemobiletools.commons.views.ColorPickerSquare
 import kotlinx.android.synthetic.main.dialog_color_picker.view.*
-import java.util.*
+import java.util.LinkedList
 
 private const val RECENT_COLORS_NUMBER = 5
 
@@ -24,6 +24,7 @@ class ColorPickerDialog(
     val activity: Activity,
     color: Int,
     val removeDimmedBackground: Boolean = false,
+    val addDefaultColorButton: Boolean = false,
     val currentColorCallback: ((color: Int) -> Unit)? = null,
     val callback: (wasPositivePressed: Boolean, color: Int) -> Unit
 ) {
@@ -141,9 +142,14 @@ class ColorPickerDialog(
 
         val textColor = activity.getProperTextColor()
         val builder = activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok) { dialog, which -> confirmNewColor() }
-            .setNegativeButton(R.string.cancel) { dialog, which -> dialogDismissed() }
+            .setPositiveButton(R.string.ok) { _, _ -> confirmNewColor() }
+            .setNegativeButton(R.string.cancel) { _, _ -> dialogDismissed() }
             .setOnCancelListener { dialogDismissed() }
+            .apply {
+                if (addDefaultColorButton) {
+                    setNeutralButton(R.string.default_color) { _, _ -> confirmDefaultColor() }
+                }
+            }
 
         builder.apply {
             activity.setupDialogStuff(view, this) { alertDialog ->
@@ -179,6 +185,10 @@ class ColorPickerDialog(
 
     private fun dialogDismissed() {
         callback(false, 0)
+    }
+
+    private fun confirmDefaultColor() {
+        callback(true, 0)
     }
 
     private fun confirmNewColor() {

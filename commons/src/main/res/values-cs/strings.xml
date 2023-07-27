@@ -76,6 +76,7 @@
     <string name="updating">Upravuje se…</string>
     <string name="phone_storage">Úložiště telefonu</string>
     <string name="phone_storage_hidden">Úložiště telefonu (neviditelné pro ostatní aplikace)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Narozeniny</string>
     <string name="anniversary">Výročí</string>
@@ -159,8 +160,15 @@
     <string name="no_contacts_permission">Je vyžadováno oprávnění pro přístup ke kontaktům</string>
     <string name="no_camera_permissions">Je vyžadováno oprávnění pro přístup k fotoaparátu</string>
     <string name="no_audio_permissions">Je vyžadováno oprávnění pro přístup ke zvuku</string>
-    <string name="no_post_notifications_permissions">Je vyžadováno oprávnění pro zobrazování oznámení</string>
     <string name="no_permission">Žádné oprávnění</string>
+    <string name="allow_notifications_reminders">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct zobrazovat upomínky.</string>
+    <string name="allow_notifications_files">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct zobrazovat stav postupu.</string>
+    <string name="allow_notifications_music_player">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct přehrávat hudbu.</string>
+    <string name="allow_notifications_voice_recorder">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct nahrávat zvuk.</string>
+    <string name="allow_notifications_incoming_calls">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct zobrazovat příchozí hovory.</string>
+    <string name="allow_notifications_incoming_messages">Musíte aplikaci povolit zobrazování upozornění, jinak nebude moct zobrazovat příchozí zprávy.</string>
+    <string name="grant_permission">Povolit oprávnění</string>
+    <string name="permission_required">Vyžadováno oprávnění</string>
     <!-- Renaming -->
     <string name="rename_file">Přejmenovat soubor</string>
     <string name="rename_folder">Přejmenovat složku</string>
@@ -730,6 +738,7 @@
     <string name="show_the_recycle_bin">Zobrazit koš</string>
     <string name="hide_the_recycle_bin">Skrýt koš</string>
     <string name="open_the_recycle_bin">Otevřít koš</string>
+    <string name="skip_the_recycle_bin">Nepoužívat koš, odstranit soubory přímo</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">%d položka se přesouvá do koše</item>
         <item quantity="few">%d položky se přesouvají do koše</item>
@@ -830,8 +839,16 @@
     <string name="more_info">Více informací</string>
     <string name="upgrade">Stáhnout</string>
     <string name="upgrade_calendar">Lokálně uložené události musíte přenést ručně, exportováním do .ics souboru a následně je naimportovat. Tlačítka pro export/import najdete v nabídce na hlavní obrazovce.</string>
-    <string name="upgraded_from_free_gallery">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your settings and favorites over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_gallery">Zdravím,
+\n
+\nzdá se, že jste právě upgradovali z bezplatné verze. Jakmile budete s touto verzí spokojeni a případně přenesete svá data, můžete starou bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat a vyhnete se jejímu náhodnému spuštění.
+\n
+\nDěkuji!</string>
+    <string name="upgraded_to_pro_gallery">Zdravím,
+\n
+\nzdá se, že již máte nainstalovanou také verzi Pro. Jakmile s ní budete spokojeni a případně přenesete svá data, můžete tuto bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat a vyhnete se jejímu náhodnému spuštění.
+\n
+\nDěkuji!</string>
     <string name="upgraded_from_free">Zdravím,
 \n
 \nzdá se, že jste právě upgradovali z bezplatné verze. Jakmile budete s touto verzí spokojeni a případně přenesete svá data, můžete starou bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat a vyhnete se jejímu náhodnému spuštění.
@@ -842,21 +859,21 @@
 \nzdá se, že již máte nainstalovanou také verzi Pro. Jakmile s ní budete spokojeni a případně přenesete svá data, můžete tuto bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat a vyhnete se jejímu náhodnému spuštění.
 \n
 \nDěkuji!</string>
-    <string name="upgraded_to_pro_calendar">Zdravím,
+    <string name="upgraded_from_free_calendar">Zdravím,
 \n
 \nzdá se, že jste právě upgradovali z bezplatné verze. Pokud chcete přenést své lokálně uložené události, musíte to udělat ručně tak, že je exportujete do souboru .ics v bezplatné verzi aplikace a importujete je sem přes horní nabídku.
 \n
 \nJakmile budete spokojeni se svým nastavením ve verzi Pro, můžete starou bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat.
 \n
 \nDěkuji!</string>
-    <string name="upgraded_to_pro_contacts">Zdravím,
+    <string name="upgraded_from_free_contacts">Zdravím,
 \n
 \nzdá se, že jste právě upgradovali z bezplatné verze. Pokud jste měli nějaké kontakty uložené pod „%s“, musíte je přenést ručně tak, že je exportujete do souboru .vcf v bezplatné verzi aplikace a imporujete je sem přes horní nabídku.
 \n
 \nJakmile budete spokojeni se svým nastavením ve verzi Pro, můžete starou bezplatnou verzi odinstalovat, protože ji již nebudete potřebovat.
 \n
 \nDěkuji!</string>
-    <string name="upgraded_to_pro_notes">Zdravím,
+    <string name="upgraded_from_free_notes">Zdravím,
 \n
 \nzdá se, že jste právě upgradovali z bezplatné verze. Chcete-li přenést své poznámky, musíte to udělat ručně tak, že je exportujete do souboru v bezplatné verzi aplikace a importujete je sem přes horní nabídku.
 \n

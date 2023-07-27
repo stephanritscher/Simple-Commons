@@ -75,6 +75,7 @@
     <string name="updating">Actualisation…</string>
     <string name="phone_storage">Mémoire du téléphone</string>
     <string name="phone_storage_hidden">Mémoire du téléphone (invisible pour les autres applis)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Date de naissance</string>
     <string name="anniversary">Autre anniversaire</string>
@@ -158,8 +159,15 @@
     <string name="no_contacts_permission">L\'autorisation d\'accès aux contacts est nécessaire</string>
     <string name="no_camera_permissions">L\'autorisation d\'accès à l\'appareil photo est nécessaire</string>
     <string name="no_audio_permissions">L\'autorisation d\'accès aux paramètres audios est nécessaire</string>
-    <string name="no_post_notifications_permissions">L\'autorisation de publier des notifications est requise</string>
     <string name="no_permission">Pas d\'autorisation</string>
+    <string name="allow_notifications_reminders">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne pourra pas afficher de rappels.</string>
+    <string name="allow_notifications_files">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne pourra pas afficher la barre de progression.</string>
+    <string name="allow_notifications_music_player">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne peut pas jouer de chansons.</string>
+    <string name="allow_notifications_voice_recorder">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne peut pas enregistrer de données audio.</string>
+    <string name="allow_notifications_incoming_calls">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne pourra pas afficher les appels entrants.</string>
+    <string name="allow_notifications_incoming_messages">Vous devez autoriser l\'application à afficher des notifications, sinon elle ne pourra pas afficher les messages entrants.</string>
+    <string name="grant_permission">Accorder l\'autorisation</string>
+    <string name="permission_required">Autorisation requise</string>
     <!-- Renaming -->
     <string name="rename_file">Renommer le fichier</string>
     <string name="rename_folder">Renommer le dossier</string>
@@ -447,7 +455,7 @@
     <string name="fingerprint">Empreinte</string>
     <string name="add_fingerprint">Capturer une empreinte</string>
     <string name="place_finger">Veuillez placer votre doigt sur le capteur d\'empreinte digitale</string>
-    <string name="open_biometric_dialog">Ouvrir la boîte de dialogue de vérification d\'identité biométrique</string>
+    <string name="open_biometric_dialog">Ouvrir la fenêtre de vérification biométrique</string>
     <string name="authenticate">Authentifier</string>
     <string name="authentication_failed">Échec de l\'identification</string>
     <string name="authentication_blocked">Identification bloquée. Veuillez réessayer dans quelques instants</string>
@@ -728,6 +736,7 @@
     <string name="show_the_recycle_bin">Afficher la corbeille</string>
     <string name="hide_the_recycle_bin">Cacher la corbeille</string>
     <string name="open_the_recycle_bin">Ouvrir la corbeille</string>
+    <string name="skip_the_recycle_bin">Oubliez la corbeille, supprimez directement les fichiers</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">%d élément déplacé dans la corbeille</item>
         <item quantity="many">%d éléments déplacés dans la corbeille</item>
@@ -828,8 +837,16 @@
     <string name="more_info">Plus d\'information</string>
     <string name="upgrade">Passer à la version Pro</string>
     <string name="upgrade_calendar">Vous devez migrer manuellement les évènements stockés localement via une exportation dans un fichier .ics, puis une importation. Vous trouverez les boutons d\'exportation/importation dans le menu de l\'écran principal.</string>
-    <string name="upgraded_from_free_gallery">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your settings and favorites over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_gallery">Bonjour,
+\n
+\nIl semblerait que vous veniez de mettre à jour la version gratuite. Une fois que vous serez satisfait de cette version et que vous aurez peut-être migré vos paramètres et vos favoris, vous pourrez désinstaller l\'ancienne version gratuite pour éviter de la lancer accidentellement, car vous n\'en aurez plus besoin.
+\n
+\nMerci de votre compréhension !</string>
+    <string name="upgraded_to_pro_gallery">Bonjour,
+\n
+\nil semble que vous ayez déjà la version Pro de l\'application. Une fois que vous en serez satisfait et que vous aurez peut-être migré vos paramètres et vos favoris, vous pourrez désinstaller celle-ci pour éviter de la lancer accidentellement, car vous n\'en aurez plus besoin.
+\n
+\nMerci de votre compréhension !</string>
     <string name="upgraded_from_free">Bonjour,
 \n
 \nil semble que vous ayez effectué une mise à niveau depuis la version gratuite. Une fois que vous serez satisfait de celle-ci et que vous aurez peut-être migré vos données, vous pourrez désinstaller l\'ancienne version gratuite pour éviter de la lancer accidentellement car vous n\'en aurez plus besoin.
@@ -840,21 +857,21 @@
 \nil semble que vous ayez déjà la version Pro de l\'application également. Une fois que vous en serez satisfait et que vous aurez peut-être migré vos données, vous pourrez désinstaller celle-ci pour éviter de la lancer accidentellement car vous n\'en aurez plus besoin.
 \n
 \nMerci !</string>
-    <string name="upgraded_to_pro_calendar">Bonjour,
+    <string name="upgraded_from_free_calendar">Bonjour,
 \n
 \nIl semble que vous ayez effectué une mise à niveau depuis la version gratuite. Si vous souhaitez migrer vos évènements stockés localement, vous devez le faire manuellement en les exportant dans un fichier .ics dans la version gratuite de l\'application et en les important ici via le menu supérieur.
 \n
 \nUne fois que vous êtes satisfait de votre installation dans la version Pro, vous pouvez désinstaller l\'ancienne version gratuite car vous n\'en aurez plus besoin.
 \n
 \nMerci !</string>
-    <string name="upgraded_to_pro_contacts">Bonjour,
+    <string name="upgraded_from_free_contacts">Bonjour,
 \n
 \nIl semble que vous ayez effectué une mise à jour depuis la version gratuite. Si vous aviez des contacts stockés sous « %s », vous devez les migrer manuellement en les exportant dans un fichier .vcf depuis la version gratuite de l\'application et en les important ici via le menu supérieur.
 \n
 \nUne fois que vous êtes satisfait de votre installation dans la version Pro, vous pouvez désinstaller l\'ancienne version gratuite car vous n\'en aurez plus besoin.
 \n
 \nMerci !</string>
-    <string name="upgraded_to_pro_notes">Bonjour,
+    <string name="upgraded_from_free_notes">Bonjour,
 \n
 \nIl semble que vous ayez effectué une mise à niveau depuis la version gratuite. Si vous souhaitez migrer vos notes, vous devez le faire manuellement en les exportant dans un fichier dans la version gratuite de l\'application et en les important ici via le menu supérieur.
 \n
@@ -1123,7 +1140,7 @@
     <string name="trial_expired">Essai expiré</string>
     <string name="start_free_trial">Commencer un essai gratuit</string>
     <string name="trial_expires_soon">Votre essai expire bientôt.</string>
-    <string name="unlock_for_one_final_day">Unlock the app for one final day</string>
+    <string name="unlock_for_one_final_day">Déverrouiller l\'application pour un dernier jour</string>
     <string name="welcome_to_app_name">Bienvenue sur %s !</string>
     <string name="trial_start_description">Merci d\'utiliser notre application. Vous pouvez utiliser cette version déverrouillée pendant <font color="#FFFFFF">%d jours</font>. Une fois la période d\'essai terminée, pensez à passer à la version Pro. Elle comporte un grand nombre de nouvelles fonctionnalités, un design moderne, aucune publicité et de nombreuses autres améliorations.
 \n

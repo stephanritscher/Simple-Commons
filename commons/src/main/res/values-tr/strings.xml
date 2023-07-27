@@ -75,6 +75,7 @@
     <string name="updating">Güncelleniyor…</string>
     <string name="phone_storage">Telefon belleği</string>
     <string name="phone_storage_hidden">Telefon belleği (diğer uygulamalar tarafından görülmez)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Doğum günü</string>
     <string name="anniversary">Yıldönümü</string>
@@ -157,8 +158,15 @@
     <string name="no_contacts_permission">Kişiler izni gerekiyor</string>
     <string name="no_camera_permissions">Kamera izni gerekiyor</string>
     <string name="no_audio_permissions">Ses izni gerekiyor</string>
-    <string name="no_post_notifications_permissions">Bildirim göndermek için izin gereklidir</string>
     <string name="no_permission">İzin yok</string>
+    <string name="allow_notifications_reminders">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde hatırlatıcıları gösteremez.</string>
+    <string name="allow_notifications_files">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde ilerleme çubuğunu gösteremez.</string>
+    <string name="allow_notifications_music_player">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde şarkı çalamaz.</string>
+    <string name="allow_notifications_voice_recorder">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde ses kaydedemez.</string>
+    <string name="allow_notifications_incoming_calls">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde gelen aramaları gösteremez.</string>
+    <string name="allow_notifications_incoming_messages">Uygulamanın bildirimleri göstermesine izin vermelisiniz, aksi halde gelen mesajları gösteremez.</string>
+    <string name="grant_permission">İzin Ver</string>
+    <string name="permission_required">İzin Gerekli</string>
     <!-- Renaming -->
     <string name="rename_file">Dosyayı yeniden adlandır</string>
     <string name="rename_folder">Klasörü yeniden adlandır</string>
@@ -691,6 +699,7 @@
     <string name="show_the_recycle_bin">Geri Dönüşüm Kutusunu göster</string>
     <string name="hide_the_recycle_bin">Geri Dönüşüm Kutusunu gizle</string>
     <string name="open_the_recycle_bin">Geri Dönüşüm Kutusunu aç</string>
+    <string name="skip_the_recycle_bin">Geri dönüşüm kutusunu atla, dosyaları doğrudan sil</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">%d öge Geri Dönüşüm Kutusu\'na taşınıyor</item>
         <item quantity="other">%d öge Geri Dönüşüm Kutusu\'na taşınıyor</item>
@@ -810,21 +819,21 @@
 \nGörünüşe göre zaten Pro uygulama sürümüne de sahipsiniz. Bundan memnun olduğunuzda ve belki de verilerinizi taşıdığınızda, artık ihtiyacınız olmayacağı için yanlışlıkla başlatmaktan kaçınmak için bunu kaldırabilirsiniz.
 \n
 \nTeşekkürler!</string>
-    <string name="upgraded_to_pro_calendar">Merhaba,
+    <string name="upgraded_from_free_calendar">Merhaba,
 \n
 \nGörünüşe göre ücretsiz sürümden yeni yükseltme yaptınız. Yerel olarak depolanan etkinliklerinizi taşımak istiyorsanız, ücretsiz uygulama sürümünde bunları bir .ics dosyasına aktararak ve üst menüden buraya aktararak bunu elle yapmanız gerekir.
 \n
 \nPro sürümdeki kurulumunuzdan memnun olduğunuzda, artık ihtiyacınız olmayacağı için eski ücretsiz sürümü kaldırabilirsiniz.
 \n
 \nTeşekkürler!</string>
-    <string name="upgraded_to_pro_contacts">Merhaba,
+    <string name="upgraded_from_free_contacts">Merhaba,
 \n
 \nGörünüşe göre ücretsiz sürümden yeni yükseltme yaptınız. \"%s\" altında kayıtlı kişileriniz varsa, ücretsiz uygulama sürümünde bunları bir .vcf dosyasına aktararak ve üst menüden buraya aktararak bunu elle yapmanız gerekir.
 \n
 \nPro sürümdeki kurulumunuzdan memnun olduğunuzda, artık ihtiyacınız olmayacağı için eski ücretsiz sürümü kaldırabilirsiniz.
 \n
 \nTeşekkürler!</string>
-    <string name="upgraded_to_pro_notes">Merhaba,
+    <string name="upgraded_from_free_notes">Merhaba,
 \n
 \nGörünüşe göre ücretsiz sürümden yeni yükseltme yaptınız. Notlarınızı taşımak istiyorsanız, ücretsiz uygulama sürümünde bunları bir dosyaya aktararak ve üst menüden buraya aktararak bunu elle yapmanız gerekir.
 \n

@@ -75,6 +75,7 @@
     <string name="updating">Aktualisieren …</string>
     <string name="phone_storage">Gerätespeicher</string>
     <string name="phone_storage_hidden">Gerätespeicher (nicht sichtbar für andere Apps)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Geburtstag</string>
     <string name="anniversary">Jahrestag</string>
@@ -157,8 +158,15 @@
     <string name="no_contacts_permission">Kontaktberechtigung wird benötigt</string>
     <string name="no_camera_permissions">Kameraberechtigung wird benötigt</string>
     <string name="no_audio_permissions">Audioberechtigung wird benötigt</string>
-    <string name="no_post_notifications_permissions">Berechtigung zur Anzeige von Benachrichtigungen wird benötigt</string>
     <string name="no_permission">Keine Berechtigung</string>
+    <string name="allow_notifications_reminders">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie keine Erinnerungen anzeigen.</string>
+    <string name="allow_notifications_files">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie den Fortschrittsbalken nicht anzeigen.</string>
+    <string name="allow_notifications_music_player">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie keine Lieder abspielen.</string>
+    <string name="allow_notifications_voice_recorder">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie keinen Ton aufnehmen.</string>
+    <string name="allow_notifications_incoming_calls">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie keine eingehenden Anrufe anzeigen.</string>
+    <string name="allow_notifications_incoming_messages">Der App die Anzeige von Benachrichtigungen erlauben, sonst kann sie keine eingehenden Nachrichten anzeigen.</string>
+    <string name="grant_permission">Berechtigung erteilen</string>
+    <string name="permission_required">Berechtigung erforderlich</string>
     <!-- Renaming -->
     <string name="rename_file">Datei umbenennen</string>
     <string name="rename_folder">Ordner umbenennen</string>
@@ -700,6 +708,7 @@
     <string name="show_the_recycle_bin">Papierkorb anzeigen</string>
     <string name="hide_the_recycle_bin">Papierkorb verstecken</string>
     <string name="open_the_recycle_bin">Papierkorb öffnen</string>
+    <string name="skip_the_recycle_bin">Den Papierkorb überspringen, Dateien sofort löschen</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">%d Element wird in den Papierkorb verschoben</item>
         <item quantity="other">%d Elemente werden in den Papierkorb verschoben</item>
@@ -799,7 +808,11 @@
     <string name="more_info">Mehr Infos</string>
     <string name="upgrade">Pro-Version installieren</string>
     <string name="upgrade_calendar">Um lokal gespeicherte Termine zu migrieren, musst du sie als ics-Datei exportieren und anschließend importieren. Die beiden Schaltflächen befinden sich im Hauptmenü.</string>
-    <string name="upgraded_from_free_gallery">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your settings and favorites over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_gallery">Hallo,
+\n
+\nes sieht so aus, als ob du gerade ein Upgrade von der kostenlosen Version durchgeführt hast. Wenn du mit ihr zufrieden bist und deine Einstellungen und Favoriten übertragen hast, kannst du die alte kostenlose Version deinstallieren, um zu vermeiden, dass sie versehentlich gestartet wird, da du sie nicht mehr benötigst.
+\n
+\nVielen Dank!</string>
     <string name="upgraded_to_pro_gallery">Hallo,
 \n
 \nes sieht so aus, als hättest du bereits die Pro-Version der App. Wenn du mit ihr zufrieden bist und deine Einstellungen und Favoriten übertragen hast, kannst du diese App deinstallieren, um zu vermeiden, dass sie versehentlich gestartet wird, da du sie nicht mehr benötigst.
@@ -815,21 +828,21 @@
 \nes sieht so aus, als hättest du bereits die Pro-Version der App. Wenn du mit ihr zufrieden bist und deine Daten migriert hast, kannst du diese App deinstallieren, um zu vermeiden, dass sie versehentlich gestartet wird, da du sie nicht mehr benötigst.
 \n
 \nVielen Dank!</string>
-    <string name="upgraded_to_pro_calendar">Hallo,
+    <string name="upgraded_from_free_calendar">Hallo,
 \n
 \nes sieht so aus, als ob du gerade ein Upgrade von der kostenlosen Version durchgeführt hast. Wenn du deine lokal gespeicherten Termine migrieren möchtest, musst du dies manuell durchführen, indem du sie in der kostenlosen App-Version in eine .ics-Datei exportierst und hier über das obere Menü importierst.
 \n
 \nSobald du mit deiner Einrichtung in der Pro-Version zufrieden bist, kannst du die alte kostenlose Version deinstallieren, da du sie nicht mehr benötigst.
 \n
 \nVielen Dank!</string>
-    <string name="upgraded_to_pro_contacts">Hallo,
+    <string name="upgraded_from_free_contacts">Hallo,
 \n
 \nes sieht so aus, als ob du gerade ein Upgrade von der kostenlosen Version durchgeführt hast. Wenn du Kontakte unter \"%s\" gespeichert hast, musst du diese manuell migrieren, indem du sie in der kostenlosen App-Version in eine .vcf-Datei exportierst und hier über das obere Menü importierst.
 \n
 \nSobald du mit deiner Einrichtung in der Pro-Version zufrieden bist, kannst du die alte kostenlose Version deinstallieren, da du sie nicht mehr benötigst.
 \n
 \nVielen Dank!</string>
-    <string name="upgraded_to_pro_notes">Hallo,
+    <string name="upgraded_from_free_notes">Hallo,
 \n
 \nes sieht so aus, als ob du gerade ein Upgrade von der kostenlosen Version durchgeführt hast. Wenn du deine Notizen migrieren möchtest, musst du dies manuell durchführen, indem du sie in der kostenlosen App-Version in eine Datei exportierst und hier über das obere Menü importierst.
 \n

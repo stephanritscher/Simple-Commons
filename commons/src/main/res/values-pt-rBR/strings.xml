@@ -75,6 +75,7 @@
     <string name="updating">Atualizando…</string>
     <string name="phone_storage">Armazenamento do telefone</string>
     <string name="phone_storage_hidden">Armazenamento do telefone (não visível por outros aplicativos)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">Data de Nascimento</string>
     <string name="anniversary">Data Especial</string>
@@ -158,8 +159,15 @@
     <string name="no_contacts_permission">A permissão de Contatos é necessária</string>
     <string name="no_camera_permissions">A permissão de Câmera é necessária</string>
     <string name="no_audio_permissions">A permissão de Áudio é necessária</string>
-    <string name="no_post_notifications_permissions">É necessária a permissão para emitir notificações</string>
     <string name="no_permission">Sem permissão</string>
+    <string name="allow_notifications_reminders">You must allow the app displaying notifications, else it cannot show reminders.</string>
+    <string name="allow_notifications_files">You must allow the app displaying notifications, else it cannot show the progress bar.</string>
+    <string name="allow_notifications_music_player">You must allow the app displaying notifications, else it cannot play songs.</string>
+    <string name="allow_notifications_voice_recorder">You must allow the app displaying notifications, else it cannot record audio.</string>
+    <string name="allow_notifications_incoming_calls">You must allow the app displaying notifications, else it cannot show incoming calls.</string>
+    <string name="allow_notifications_incoming_messages">You must allow the app displaying notifications, else it cannot show incoming messages.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_required">Permission Required</string>
     <!-- Renaming -->
     <string name="rename_file">Renomear arquivo</string>
     <string name="rename_folder">Renomear pasta</string>
@@ -728,6 +736,7 @@
     <string name="show_the_recycle_bin">Exibir a Lixeira</string>
     <string name="hide_the_recycle_bin">Ocultar a Lixeira</string>
     <string name="open_the_recycle_bin">Abrir a Lixeira</string>
+    <string name="skip_the_recycle_bin">Skip the Recycle Bin, delete files directly</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">Movendo %d item para a Lixeira</item>
         <item quantity="many">Movendo %d itens para a Lixeira</item>
@@ -833,15 +842,15 @@
 \nparece que você já tem a versão Pro também. Uma vez que você esteja feliz com e já tenha migrado seus dados, você pode desinstalar esta versão para evitar lançá-la acidentalmente, pois você não precisará mais dela.
 \n
 \nObrigado!</string>
-    <string name="upgraded_to_pro_calendar">Olá
+    <string name="upgraded_from_free_calendar">Olá
 \n
 \nparece que você acabou de atualizar a partir da versão gratuita. Se você quiser migrar seus eventos armazenados localmente, você tem que fazê-lo manualmente, exportando-os para um arquivo .ics na versão gratuita do aplicativo e importando aqui através do menu superior.
 \n
 \nUma vez que você esteja satisfeito com sua configuração na versão Pro, você pode desinstalar o antigo gratuito, pois você não precisará mais dele.
 \n
 \nObrigado!</string>
-    <string name="upgraded_to_pro_contacts">Hello,\n\nseems like you just upgraded from the free version. If you had any contacts stored under \"%s\", you have to migrate them manually by exporting in a .vcf file from the free app version and importing here through the top menu.\n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_notes">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your notes over, you have to do it manually by exporting them into a file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_contacts">Hello,\n\nseems like you just upgraded from the free version. If you had any contacts stored under \"%s\", you have to migrate them manually by exporting in a .vcf file from the free app version and importing here through the top menu.\n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_notes">Hello,\n\nseems like you just upgraded from the free version. If you want to migrate your notes over, you have to do it manually by exporting them into a file in the free app version and importing here through the top menu. \n\nOnce you are satisfied with your setup in the Pro version, you can uninstall the old free one as you won\'t need it anymore.\n\nThanks!</string>
     <!-- About -->
     <string name="about">Sobre</string>
     <string name="website">Website</string>

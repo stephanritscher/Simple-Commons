@@ -75,6 +75,7 @@
     <string name="updating">Триває оновлення…</string>
     <string name="phone_storage">Пам\'ять пристрою</string>
     <string name="phone_storage_hidden">Пам\'ять пристрою (прихована від інших застосунків)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">День народження</string>
     <string name="anniversary">Річниця</string>
@@ -159,8 +160,15 @@
     <string name="no_contacts_permission">Необхідний дозвіл на доступ до контактів</string>
     <string name="no_camera_permissions">Необхідний дозвіл на доступ до камери</string>
     <string name="no_audio_permissions">Необхідний дозвіл на доступ до аудіо</string>
-    <string name="no_post_notifications_permissions">Потрібен дозвіл на публікацію сповіщень</string>
     <string name="no_permission">Без дозволу</string>
+    <string name="allow_notifications_reminders">You must allow the app displaying notifications, else it cannot show reminders.</string>
+    <string name="allow_notifications_files">You must allow the app displaying notifications, else it cannot show the progress bar.</string>
+    <string name="allow_notifications_music_player">You must allow the app displaying notifications, else it cannot play songs.</string>
+    <string name="allow_notifications_voice_recorder">You must allow the app displaying notifications, else it cannot record audio.</string>
+    <string name="allow_notifications_incoming_calls">You must allow the app displaying notifications, else it cannot show incoming calls.</string>
+    <string name="allow_notifications_incoming_messages">You must allow the app displaying notifications, else it cannot show incoming messages.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_required">Permission Required</string>
     <!-- Renaming -->
     <string name="rename_file">Перейменувати файл</string>
     <string name="rename_folder">Перейменувати теку</string>
@@ -758,6 +766,7 @@
     <string name="show_the_recycle_bin">Показати Кошик</string>
     <string name="hide_the_recycle_bin">Приховати Кошик</string>
     <string name="open_the_recycle_bin">Відкрити Кошик</string>
+    <string name="skip_the_recycle_bin">Skip the Recycle Bin, delete files directly</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">Переміщення %d елемента в Кошик</item>
         <item quantity="few">Переміщення %d елементів у Кошик</item>
@@ -859,8 +868,16 @@
     <string name="more_info">Більше інформації</string>
     <string name="upgrade">Оновити</string>
     <string name="upgrade_calendar">Вам доведеться власноруч перемістити події, що зберігаються локально, експортувавши їх в .ics файл, а потім імпортувавши з нього. Ви знайдете кнопку експорту/імпорту в меню головного екрана.</string>
-    <string name="upgraded_from_free_gallery">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your settings and favorites over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_gallery">Привіт,
+\n
+\nсхоже, ви щойно оновили безплатну версію. Якщо ви задоволені цією версією і, можливо, перенесли свої налаштування і вибране, ви можете видалити стару безплатну версію, щоб випадково не запустити її, оскільки вона вам більше не знадобиться.
+\n
+\nДякуємо!</string>
+    <string name="upgraded_to_pro_gallery">Привіт,
+\n
+\nсхоже, що у вас вже є Pro-версія застосунку. Якщо ви задоволені нею і, можливо, перенесли свої налаштування та дані, ви можете видалити цю версію, щоб не запускати її випадково, оскільки вона вам більше не знадобиться.
+\n
+\nДякуємо!</string>
     <string name="upgraded_from_free">Привіт,
 \n
 \nздається, ви щойно оновили безплатну версію. Коли ви задоволені цим і, можливо, перенесете свої дані, ви можете видалити старий безплатний, щоб уникнути його випадкового запуску, оскільки він вам більше не знадобиться.
@@ -871,21 +888,21 @@
 \nздається, у вас уже є версія застосунку Pro. Коли ви задоволені ним і, можливо, перенесете свої дані, ви можете видалити його, щоб уникнути його випадкового запуску, оскільки він вам більше не знадобиться.
 \n
 \nДякую!</string>
-    <string name="upgraded_to_pro_calendar">Привіт,
+    <string name="upgraded_from_free_calendar">Привіт,
 \n
 \nздається, ви щойно оновили безкоштовну версію. Якщо ви хочете перенести локально збережені події, ви повинні зробити це вручну, експортувавши їх у файл .ics у безкоштовній версії застосунку та імпортувавши сюди через верхнє меню.
 \n
 \nКоли ви задоволені налаштуваннями версії Pro, ви можете видалити стару безкоштовну версію, оскільки вона вам більше не знадобиться.
 \n
 \nДякую!</string>
-    <string name="upgraded_to_pro_contacts">Привіт,
+    <string name="upgraded_from_free_contacts">Привіт,
 \n
 \nздається, ви щойно оновили безкоштовну версію. Якщо у вас були будь-які контакти, збережені в \"%s\", вам потрібно перенести їх вручну, експортувавши у файл .vcf із безкоштовної версії застосунку та імпортувавши сюди через верхнє меню.
 \n
 \nКоли ви задоволені налаштуваннями версії Pro, ви можете видалити стару безкоштовну версію, оскільки вона вам більше не знадобиться.
 \n
 \nДякую!</string>
-    <string name="upgraded_to_pro_notes">Привіт,
+    <string name="upgraded_from_free_notes">Привіт,
 \n
 \nздається, ви щойно оновили безкоштовну версію. Якщо ви хочете перенести свої нотатки, ви повинні зробити це вручну, експортувавши їх у файл у безкоштовній версії застосунку та імпортувавши сюди через верхнє меню.
 \n

@@ -75,6 +75,7 @@
     <string name="updating">تحديث…</string>
     <string name="phone_storage">ذاكرة الهاتف</string>
     <string name="phone_storage_hidden">ذاكرة الهاتف (غير مرئية من قبل التطبيقات الأخرى)</string>
+    <string name="audio">Audio</string>
     <!-- Events -->
     <string name="birthday">تاريخ الميلاد</string>
     <string name="anniversary">مناسبة</string>
@@ -161,8 +162,15 @@
     <string name="no_contacts_permission">مطلوب إذن جهات الإتصال</string>
     <string name="no_camera_permissions">مطلوب إذن الكاميرا</string>
     <string name="no_audio_permissions">مطلوب إذن الصوت</string>
-    <string name="no_post_notifications_permissions">مطلوب إذن لنشر الإخطارات</string>
     <string name="no_permission">لاتوجد صلاحيات</string>
+    <string name="allow_notifications_reminders">يجب أن تسمح للتطبيقات لعرض الإخطارات ، أو أنها لن تكون قادرة على عرض تذكير .</string>
+    <string name="allow_notifications_files">يجب أن تسمح للتطبيق بعرض الإشعارات ، وإلا فلن يتمكن من إظهار شريط التقدم.</string>
+    <string name="allow_notifications_music_player">يجب أن تسمح للتطبيق بعرض الإخطارات ، أو أنه لن يكون قادرا على تشغيل الموسيقى.</string>
+    <string name="allow_notifications_voice_recorder">يجب أن تسمح للتطبيق بعرض الإشعارات ، وإلا فلن يتمكن من تسجيل الصوت.</string>
+    <string name="allow_notifications_incoming_calls">يجب أن تسمح للتطبيق بعرض الإشعارات ، وإلا فلن يتمكن من إظهار المكالمات الواردة.</string>
+    <string name="allow_notifications_incoming_messages">يجب أن تسمح للتطبيق بعرض الإشعارات ، وإلا فلن يتمكن من إظهار الرسائل الواردة.</string>
+    <string name="grant_permission">منح الإذن</string>
+    <string name="permission_required">الإذن مطلوب</string>
     <!-- Renaming -->
     <string name="rename_file">إعادة تسمية الملف</string>
     <string name="rename_folder">إعادة تسمية المجلد</string>
@@ -828,6 +836,7 @@
     <string name="show_the_recycle_bin">إظهار سلة المحذوفات</string>
     <string name="hide_the_recycle_bin">إخفاء سلة المحذوفات</string>
     <string name="open_the_recycle_bin">فتح سلة المحذوفات</string>
+    <string name="skip_the_recycle_bin">تخطي سلة المحذوفات ، وحذف الملفات مباشرة</string>
     <plurals name="moving_items_into_bin">
         <item quantity="zero">نقل عنصر %d إلى سلة المحذوفات</item>
         <item quantity="one">نقل عنصر %d إلى سلة المحذوفات</item>
@@ -931,8 +940,16 @@
     <string name="more_info">المزيد من المعلومات</string>
     <string name="upgrade">ترقية</string>
     <string name="upgrade_calendar">يجب عليك ترحيل الأحداث المخزنة محلياً يدوياً عن طريق التصدير في ملف .ics ، ثم الإستيراد. يمكنك العثور على أزرار التصدير / الإستيراد في قائمة الشاشة الرئيسية.</string>
-    <string name="upgraded_from_free_gallery">Hello,\n\nseems like you just upgraded from the free version. Once you are happy with this one and maybe migrated your settings and favorites over, you can uninstall the old free one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
-    <string name="upgraded_to_pro_gallery">Hello,\n\nseems like you already have the Pro app version too. Once you are happy with it and maybe migrated your settings and favorites over, you can uninstall this one to avoid launching it accidentally as you will not need it anymore.\n\nThanks!</string>
+    <string name="upgraded_from_free_gallery">مرحبًا
+\n
+\nيبدو أنك قمت بالترقية للتو من الإصدار المجاني. بمجرد أن تكون راضيا عن هذا وربما تقوم بترحيل إعداداتك ومفضلاتك ، يمكنك إلغاء تثبيت الإعداد المجاني القديم لتجنب تشغيله عن طريق الخطأ لأنك لن تحتاج إليه بعد الآن.
+\n
+\nشكرا!</string>
+    <string name="upgraded_to_pro_gallery">مرحبًا،
+\n
+\nيبدو أن لديك بالفعل إصدار تطبيق Pro أيضًا. بمجرد أن تكون سعيدًا به وربما تقوم بترحيل الإعدادات والمفضلات الخاصة بك ، يمكنك إلغاء تثبيت هذا لتجنب تشغيله عن طريق الخطأ لأنك لن تحتاج إليه بعد الآن.
+\n
+\nشكرًا!</string>
     <string name="upgraded_from_free">مرحبًا
 \n
 \nيبدو أنك قمت بالترقية للتو من الإصدار المجاني. بمجرد أن تكون راضيا عن هذا وربما تقوم بترحيل بياناتك ، يمكنك إلغاء تثبيت الإصدار المجاني القديم لتجنب تشغيله عن طريق الخطأ لأنك لن تحتاج إليه بعد الآن.
@@ -943,21 +960,21 @@
 \nيبدو أن لديك بالفعل إصدار تطبيق Pro أيضا. بمجرد أن تكون راضيا عنها وربما تقوم بترحيل بياناتك ، يمكنك إلغاء تثبيت هذا الجهاز لتجنب تشغيله عن طريق الخطأ لأنك لن تحتاج إليه بعد الآن.
 \n
 \nشكرا!</string>
-    <string name="upgraded_to_pro_calendar">مرحبًا
+    <string name="upgraded_from_free_calendar">مرحبًا
 \n
 \nيبدو أنك قمت بالترقية للتو من الإصدار المجاني. إذا كنت ترغب في ترحيل الأحداث المخزنة محليا ، فيجب عليك القيام بذلك يدويا عن طريق تصديرها إلى ملف .ics في إصدار التطبيق المجاني واستيرادها هنا من خلال القائمة العلوية.
 \n
 \nبمجرد أن تشعر بالرضا عن الإعداد الخاص بك في الإصدار Pro ، يمكنك إلغاء تثبيت الإصدار المجاني القديم حيث لن تحتاج إليه بعد الآن.
 \n
 \nشكرا!</string>
-    <string name="upgraded_to_pro_contacts">مرحبًا
+    <string name="upgraded_from_free_contacts">مرحبًا
 \n
 \nيبدو أنك قمت بالترقية للتو من الإصدار المجاني. إذا كان لديك أي جهات اتصال مخزنة ضمن \"%s\" ، فيجب عليك ترحيلها يدويا عن طريق التصدير في ملف .vcf من إصدار التطبيق المجاني والاستيراد هنا من خلال القائمة العلوية.
 \n
 \nبمجرد أن تشعر بالرضا عن الإعداد الخاص بك في الإصدار Pro ، يمكنك إلغاء تثبيت الإصدار المجاني القديم حيث لن تحتاج إليه بعد الآن.
 \n
 \nشكرا!</string>
-    <string name="upgraded_to_pro_notes">مرحبًا
+    <string name="upgraded_from_free_notes">مرحبًا
 \n
 \nيبدو أنك قمت بالترقية للتو من الإصدار المجاني. إذا كنت ترغب في ترحيل ملاحظاتك ، فعليك القيام بذلك يدويا عن طريق تصديرها إلى ملف في إصدار التطبيق المجاني والاستيراد هنا من خلال القائمة العلوية.
 \n
