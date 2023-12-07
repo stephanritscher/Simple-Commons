@@ -2,6 +2,7 @@
 <resources>
     <string name="ok">Добра</string>
     <string name="cancel">Скасаваць</string>
+    <string name="close">Close</string>
     <string name="back">Назад</string>
     <string name="nothing">нічога</string>
     <string name="later">Пазней</string>
@@ -76,6 +77,7 @@
     <string name="phone_storage">Сховішча тэлефона</string>
     <string name="phone_storage_hidden">Сховішча тэлефона (не бачна іншым праграмам)</string>
     <string name="audio">Audio</string>
+    <string name="scanning">Scanning…</string>
     <!-- Events -->
     <string name="birthday">Дзень нараджэння</string>
     <string name="anniversary">Гадавіна</string>
@@ -98,6 +100,7 @@
     <string name="increase_column_count">Павялічыць колькасць слупкоў</string>
     <string name="reduce_column_count">Паменьшіць колькасць слупкоў</string>
     <string name="column_count">Колькасць слупкоў</string>
+    <string name="row_count">Row count</string>
     <string name="portrait_column_count">Колькасць слупкоў у партрэтным рэжыме</string>
     <string name="landscape_column_count">Колькасць слупкоў у ландшафтным рэжыме</string>
     <string name="change_cover_image">Змяніць вокладку</string>
@@ -107,6 +110,10 @@
         <item quantity="few">%d слупкі</item>
         <item quantity="many">%d слупкоў</item>
         <item quantity="other">%d слупкоў</item>
+    </plurals>
+    <plurals name="row_counts">
+        <item quantity="one">%d row</item>
+        <item quantity="other">%d rows</item>
     </plurals>
     <!-- Blocked numbers -->
     <string name="manage_blocked_numbers">Кіраванне заблакаванымі нумарамі</string>
@@ -120,8 +127,10 @@
     <string name="must_make_default_dialer">Вы павінны зрабіць гэта дадатак стандартным дадаткам дазвону, каб выкарыстоўваць заблакіраваныя нумары.</string>
     <string name="set_as_default">Ўсталяваць па змаўчанні</string>
     <string name="block_confirmation">Заблакаваць \"%s\"\?</string>
-    <string name="block_unknown_calls">Блакаваць выклікі ад невядомых кантактаў</string>
-    <string name="block_unknown_messages">Блакаваць паведамленні ад невядомых кантактаў</string>
+    <string name="block_not_stored_calls">Блакаваць выклікі ад невядомых кантактаў</string>
+    <string name="block_hidden_calls">Block calls from hidden numbers</string>
+    <string name="block_not_stored_messages">Блакаваць паведамленні ад невядомых кантактаў</string>
+    <string name="block_hidden_messages">Block messages from hidden numbers</string>
     <string name="add_blocked_number_helper_text">Увядзіце нумар або шаблон (напрыклад, *12345*, +1*8888), каб заблакіраваць усе выклікі і паведамленні з нумароў, якія адпавядаюць шаблону.</string>
     <string name="must_make_default_caller_id_app">Немагчыма заблакіраваць невядомыя нумары без дазволу ідэнтыфікатара абанента.</string>
     <!-- Favorites -->
@@ -133,6 +142,7 @@
     <string name="search">Пошук</string>
     <string name="search_in_placeholder">Пошук у %s</string>
     <string name="type_2_characters">Каб пачаць пошук, увядзіце мінімум 2 сімвалы.</string>
+    <string name="show_search">Show a search bar</string>
     <string name="search_contacts">Пошук кантактаў</string>
     <string name="search_favorites">Пошук абраных</string>
     <string name="search_apps">Пошук праграм</string>
@@ -162,11 +172,16 @@
     <string name="no_audio_permissions">Патрабуецца дазвол на доступ да мікрафону</string>
     <string name="no_permission">Няма дазволу</string>
     <string name="allow_notifications_reminders">Вы павінны дазволіць праграме паказваць апавяшчэнні, інакш яна не можа паказваць напаміны.</string>
+    <string name="allow_full_screen_notifications_reminders">You must allow the app displaying full screen notifications, else you may miss some reminders.</string>
     <string name="allow_notifications_files">Вы павінны дазволіць праграме паказваць апавяшчэнні, у адваротным выпадку яна не можа паказваць панэль прагрэсу.</string>
     <string name="allow_notifications_music_player">Вы павінны дазволіць праграме паказ апавяшчэнняў, інакш яна не можа прайграваць песні.</string>
     <string name="allow_notifications_voice_recorder">Вы павінны дазволіць праграме паказ апавяшчэнняў, у адваротным выпадку яна не можа запісваць аўдыя.</string>
     <string name="allow_notifications_incoming_calls">Вы павінны дазволіць праграме паказваць апавяшчэнні, інакш яна не зможа паказваць ўваходныя выклікі.</string>
+    <string name="allow_full_screen_notifications_incoming_calls">You must allow the app displaying full screen notifications, else you may miss some incoming calls.</string>
     <string name="allow_notifications_incoming_messages">Вы павінны дазволіць праграме паказваць апавяшчэнні, у адваротным выпадку яна не можа паказваць ўваходныя паведамленні.</string>
+    <string name="allow_alarm_scheduled_messages">You must allow the app accessing internal alarms, else it cannot send scheduled messages.</string>
+    <string name="allow_alarm_sleep_timer">You must allow the app accessing internal alarms, else it cannot turn off the application after sleep timer.</string>
+    <string name="allow_location_permission">You must allow the app accessing your location, else it won\'t know it.</string>
     <string name="grant_permission">Даць дазвол</string>
     <string name="permission_required">Патрабуецца дазвол</string>
     <!-- Renaming -->
@@ -313,6 +328,7 @@
     <string name="duration">Працягласць</string>
     <string name="artist">Выканаўца</string>
     <string name="album">Альбом</string>
+    <string name="genre">Genre</string>
     <string name="focal_length">Фокусная адлегласць</string>
     <string name="exposure_time">Вытрымка</string>
     <string name="iso_speed">Святлоадчувальнасць</string>
@@ -381,6 +397,7 @@
     <string name="unhide_folder">Паказаць папку</string>
     <string name="temporarily_show_hidden">Часова паказаць схаванае</string>
     <string name="stop_showing_hidden">Спыніць паказ схаваных мультымедыя</string>
+    <string name="allow_access_more_media">Allow access to more media</string>
     <string name="maximum_share_reached">Вы не можаце абагуліць столькі змесціва адначасова</string>
     <string name="empty_and_disable_recycle_bin">Ачысціце і адключыце кошык</string>
     <string name="undo">Адрабіць</string>
@@ -405,6 +422,9 @@
     <string name="contact_details">Contact details</string>
     <string name="add_contact">Add contact</string>
     <string name="wallpapers">Шпалеры</string>
+    <string name="show_line_numbers">Show line numbers</string>
+    <string name="hide_line_numbers">Hide line numbers</string>
+    <string name="sleep_timer">Таймер сну</string>
     <!-- Sorting -->
     <string name="sort_by">Сартаваць па…</string>
     <string name="name">Назва</string>
@@ -412,6 +432,7 @@
     <string name="last_modified">Апошні раз зменена</string>
     <string name="date_created">Дата стварэння</string>
     <string name="date_taken">Дата ўзяцця</string>
+    <string name="date_added">Date added</string>
     <string name="title">Назва</string>
     <string name="filename">Назва файла</string>
     <string name="extension">Пашырэнне</string>
@@ -471,6 +492,12 @@
     <string name="lock_folder_pro">Заблакіраваць тэчку (Pro)</string>
     <string name="unlock_folder">Разблакіраваць тэчку</string>
     <string name="lock_folder_notice">Гэтая абарона працуе толькі ў гэтым дадатку, яна не павінна замяняць сапраўднае агульнасістэмнае шыфраванне папак.</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password">Password</string>
+    <string name="add_password">Add password</string>
+    <string name="empty_password_new">Please enter a password</string>
+    <string name="empty_password">Please enter the password</string>
+    <string name="invalid_password">Incorrect password</string>
     <!-- Times -->
     <string name="yesterday">Учора</string>
     <string name="today">Сёння</string>
@@ -706,6 +733,7 @@
     <string name="use_24_hour_time_format">Выкарыстоўвайце 24-гадзінны фармат часу</string>
     <string name="change_date_and_time_format">Змяніць фармат даты і часу</string>
     <string name="sunday_first">Пачатак тыдня ў нядзелю</string>
+    <string name="start_week_on">Start week on</string>
     <string name="widgets">Віджэты</string>
     <string name="use_same_snooze">Заўсёды выкарыстоўвайце аднолькавы час адкладання</string>
     <string name="snooze_time">Час адкладання</string>
@@ -871,7 +899,7 @@
     <string name="upgrade_calendar">Вы павінны перанесці лакальна захаваныя падзеі ўручную шляхам экспарту ў файл .ics, а затым імпарту. Вы можаце знайсці абедзве кнопкі экспарту/імпарту ў галоўным меню экрана.</string>
     <string name="upgraded_from_free_gallery">Добры дзень,
 \n
-\nздаецца, вы толькі што перайшлі з бясплатнай версіі. Калі вы задаволены гэтым і, магчыма, перанясеце свае налады і абранае, вы можаце выдаліць старую бясплатную праграму, каб пазбегнуць яе выпадковага запуску, бо яна вам больш не спатрэбіцца.
+\nздаецца, вы толькі што перайшлі з бясплатнай версіі. Калі вы задаволены гэтым і, магчыма, перанясеце свае налады і абранае, вы можаце выдаліць старую бясплатную праграму, каб пазбегнуць яе выпадковага запуску, бо яна вам больш не спатрэбіцца, гэта таксама прадухіліць з\'яўленне гэтага дыялогу.
 \n
 \nДзякуй!</string>
     <string name="upgraded_to_pro_gallery">Добры дзень,
@@ -881,7 +909,7 @@
 \nДзякуй!</string>
     <string name="upgraded_from_free">Добры дзень,
 \n
-\nздаецца, вы толькі што перайшлі з бясплатнай версіі. Калі вы будзеце задаволены гэтым і, магчыма, перанясеце свае даныя, вы можаце выдаліць старую бясплатную праграму, каб пазбегнуць яе выпадковага запуску, бо яна вам больш не спатрэбіцца.
+\nздаецца, вы толькі што перайшлі з бясплатнай версіі. Калі вы будзеце задаволены гэтым і, магчыма, перанясеце свае даныя, вы можаце выдаліць старую бясплатную праграму, каб пазбегнуць яе выпадковага запуску, бо яна вам больш не спатрэбіцца, гэта таксама прадухіліць з\'яўленне гэтага дыялогу.
 \n
 \nДзякуй!</string>
     <string name="upgraded_to_pro">Добры дзень,
@@ -893,7 +921,7 @@
 \n
 \nздаецца, вы толькі што перайшлі з бясплатнай версіі. Калі вы хочаце перанесці свае лакальна захаваныя падзеі, вам трэба зрабіць гэта ўручную, экспартаваўшы іх у файл .ics у бясплатнай версіі праграмы і імпартаваўшы сюды праз верхняе меню.
 \n
-\nКалі вы будзеце задаволены сваімі наладамі ў версіі Pro, вы можаце выдаліць старую бясплатную версію, бо яна вам больш не спатрэбіцца.
+\nКалі вы будзеце задаволены сваімі наладамі ў версіі Pro, вы можаце выдаліць старую бясплатную версію, бо яна вам больш не спатрэбіцца, гэта таксама прадухіліць з\'яўленне гэтага дыялогу.
 \n
 \nДзякуй!</string>
     <string name="upgraded_from_free_contacts">Добры дзень,
@@ -1079,6 +1107,7 @@
     <string name="why_upgrade_footer">100% Гарантыя Вяртання Грошай</string>
     <string name="why_upgrade_footer_one_time_payment">Аднаразовая аплата</string>
     <string name="why_upgrade_improved_design">Палепшаны дызайн</string>
+    <string name="why_upgrade_many_other_improvements">Many other improvements</string>
     <!-- Gallery Pro -->
     <string name="why_upgrade_advanced_photo_editor">Пашыраны рэдактар фатаграфій</string>
     <string name="why_upgrade_advanced_photo_video_editor">Advanced photo &amp; video editor</string>
@@ -1144,8 +1173,10 @@
     <string name="sms_mms_title">SMS MMS (Апрацоўка SMS і MMS)</string>
     <string name="apng_title">APNG Android (аніміраваная падтрымка WebP)</string>
     <string name="pdf_view_pager_title">PDFViewPager (Прагляд PDF)</string>
+    <string name="pdf_viewer_title">Android PdfViewer (Прагляд PDF)</string>
     <string name="m3u_parser_title">M3U Parser (апрацоўка файла спісу прайгравання m3u)</string>
     <string name="android_lame_title">AndroidLame (кадавальнік mp3)</string>
+    <string name="zip4j_title">Zip4j (ZIP compression and decompression)</string>
     <!-- Trial -->
     <string name="trial_expired">Trial expired</string>
     <string name="start_free_trial">Start free trial</string>

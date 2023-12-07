@@ -2,6 +2,7 @@
 <resources>
     <string name="ok">OK</string>
     <string name="cancel">Anuluj</string>
+    <string name="close">Zamknij</string>
     <string name="back">Wstecz</string>
     <string name="nothing">Nic</string>
     <string name="later">Później</string>
@@ -76,6 +77,7 @@
     <string name="phone_storage">Pamięć telefonu</string>
     <string name="phone_storage_hidden">Pamięć telefonu (niewidoczne dla innych aplikacji)</string>
     <string name="audio">Audio</string>
+    <string name="scanning">Skanowanie…</string>
     <!-- Events -->
     <string name="birthday">Urodziny</string>
     <string name="anniversary">Rocznica</string>
@@ -98,6 +100,7 @@
     <string name="increase_column_count">Zwiększ liczbę kolumn</string>
     <string name="reduce_column_count">Zmniejsz liczbę kolumn</string>
     <string name="column_count">Liczba kolumn</string>
+    <string name="row_count">Liczba wierszy</string>
     <string name="portrait_column_count">Liczba kolumn w trybie pionowym</string>
     <string name="landscape_column_count">Liczba kolumn w trybie poziomym</string>
     <string name="change_cover_image">Zmień okładkę</string>
@@ -107,6 +110,12 @@
         <item quantity="few">%d kolumny</item>
         <item quantity="many">%d kolumn</item>
         <item quantity="other">%d kolumn</item>
+    </plurals>
+    <plurals name="row_counts">
+        <item quantity="one">%d wiersz</item>
+        <item quantity="few">%d wiersze</item>
+        <item quantity="many">%d wierszy</item>
+        <item quantity="other">%d wierszy</item>
     </plurals>
     <!-- Blocked numbers -->
     <string name="manage_blocked_numbers">Zarządzaj zablokowanymi numerami</string>
@@ -120,8 +129,10 @@
     <string name="must_make_default_dialer">Musisz ustawić tę aplikację jako domyślną aplikację telefonu, aby blokować numery.</string>
     <string name="set_as_default">Ustaw jako domyślną</string>
     <string name="block_confirmation">Czy zablokować „%s”\?</string>
-    <string name="block_unknown_calls">Blokuj połączenia od niezapisanych kontaktów</string>
-    <string name="block_unknown_messages">Blokuj wiadomości od niezapisanych kontaktów</string>
+    <string name="block_not_stored_calls">Blokuj połączenia od niezapisanych kontaktów</string>
+    <string name="block_hidden_calls">Blokuj połączenia od ukrytych numerów</string>
+    <string name="block_not_stored_messages">Blokuj wiadomości od niezapisanych kontaktów</string>
+    <string name="block_hidden_messages">Blokuj wiadomości od ukrytych numerów</string>
     <string name="add_blocked_number_helper_text">Wprowadź numer lub wzorzec (np. *12345*, +48*8888), aby blokować wszystkie połączenia i wiadomości z numerów pasujących do wzorca</string>
     <string name="must_make_default_caller_id_app">Nie można blokować nieznanych numerów bez uprawnienia do identyfikacji rozmówcy</string>
     <!-- Favorites -->
@@ -133,6 +144,7 @@
     <string name="search">Szukaj</string>
     <string name="search_in_placeholder">Szukaj w %s</string>
     <string name="type_2_characters">Wpisz co najmniej 2 znaki, aby rozpocząć wyszukiwanie.</string>
+    <string name="show_search">Pokazuj pasek wyszukiwania</string>
     <string name="search_contacts">Szukaj kontaktów</string>
     <string name="search_favorites">Szukaj ulubionych</string>
     <string name="search_apps">Szukaj aplikacji</string>
@@ -162,11 +174,16 @@
     <string name="no_audio_permissions">Wymagane jest uprawnienie „Mikrofon”</string>
     <string name="no_permission">Brak uprawnienia</string>
     <string name="allow_notifications_reminders">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać przypomnień.</string>
+    <string name="allow_full_screen_notifications_reminders">Musisz zezwolić aplikacji na wyświetlanie powiadomień na pełnym ekranie, w przeciwnym razie możesz przegapić niektóre przypomnienia.</string>
     <string name="allow_notifications_files">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać paska postępu.</string>
     <string name="allow_notifications_music_player">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła odtwarzać utworów.</string>
     <string name="allow_notifications_voice_recorder">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła nagrywać dźwięku.</string>
     <string name="allow_notifications_incoming_calls">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać połączeń przychodzących.</string>
+    <string name="allow_full_screen_notifications_incoming_calls">Musisz zezwolić aplikacji na wyświetlanie powiadomień na pełnym ekranie, w przeciwnym razie możesz przegapić niektóre połączenia przychodzące.</string>
     <string name="allow_notifications_incoming_messages">Musisz zezwolić aplikacji na wyświetlanie powiadomień, w przeciwnym razie nie będzie mogła wyświetlać wiadomości przychodzących.</string>
+    <string name="allow_alarm_scheduled_messages">Musisz zezwolić aplikacji na dostęp do alarmów, w przeciwnym razie nie będzie mogła wysyłać zaplanowanych wiadomości.</string>
+    <string name="allow_alarm_sleep_timer">Musisz zezwolić aplikacji na dostęp do alarmów, w przeciwnym razie nie będzie mogła się wyłączyć po upływie czasu uśpienia.</string>
+    <string name="allow_location_permission">Musisz zezwolić aplikacji na dostęp do Twojej lokalizacji, w przeciwnym razie nie będzie jej znać.</string>
     <string name="grant_permission">Nadaj uprawnienie</string>
     <string name="permission_required">Wymagane uprawnienie</string>
     <!-- Renaming -->
@@ -307,6 +324,7 @@
     <string name="duration">Czas trwania</string>
     <string name="artist">Artysta</string>
     <string name="album">Album</string>
+    <string name="genre">Gatunek</string>
     <string name="focal_length">Ogniskowa</string>
     <string name="exposure_time">Czas ekspozycji</string>
     <string name="iso_speed">Czułość ISO</string>
@@ -376,6 +394,7 @@
     <string name="unhide_folder">Odkryj folder</string>
     <string name="temporarily_show_hidden">Tymczasowo pokaż ukryte elementy</string>
     <string name="stop_showing_hidden">Przestań pokazywać ukryte elementy</string>
+    <string name="allow_access_more_media">Zezwól na dostęp do większej liczby multimediów</string>
     <string name="maximum_share_reached">Nie możesz udostępniać tak wielu danych naraz</string>
     <string name="empty_and_disable_recycle_bin">Opróżnij i wyłącz kosz</string>
     <string name="undo">Cofnij</string>
@@ -400,6 +419,9 @@
     <string name="contact_details">Szczegóły kontaktu</string>
     <string name="add_contact">Dodaj kontakt</string>
     <string name="wallpapers">Tapety</string>
+    <string name="show_line_numbers">Pokaż numery linii</string>
+    <string name="hide_line_numbers">Ukryj numery linii</string>
+    <string name="sleep_timer">Wyłącznik czasowy</string>
     <!-- Sorting -->
     <string name="sort_by">Sortuj według</string>
     <string name="name">Nazwa</string>
@@ -407,6 +429,7 @@
     <string name="last_modified">Data modyfikacji</string>
     <string name="date_created">Data utworzenia</string>
     <string name="date_taken">Data wykonania</string>
+    <string name="date_added">Data dodania</string>
     <string name="title">Tytuł</string>
     <string name="filename">Nazwa pliku</string>
     <string name="extension">Rozszerzenie</string>
@@ -468,6 +491,12 @@
     <string name="lock_folder_pro">Zablokuj folder (Pro)</string>
     <string name="unlock_folder">Odblokuj folder</string>
     <string name="lock_folder_notice">Ta ochrona działa tylko w tej aplikacji i nie ma zastępować prawdziwego szyfrowania folderów w całym systemie.</string>
+    <string name="enter_password">Wprowadź hasło</string>
+    <string name="password">Hasło</string>
+    <string name="add_password">Dodaj hasło</string>
+    <string name="empty_password_new">Wprowadź hasło</string>
+    <string name="empty_password">Wprowadź hasło</string>
+    <string name="invalid_password">Nieprawidłowe hasło</string>
     <!-- Times -->
     <string name="yesterday">Wczoraj</string>
     <string name="today">Dzisiaj</string>
@@ -703,6 +732,7 @@
     <string name="use_24_hour_time_format">Używaj 24-godzinnego formatu czasu</string>
     <string name="change_date_and_time_format">Zmień format daty i godziny</string>
     <string name="sunday_first">Rozpoczynaj tydzień od niedzieli</string>
+    <string name="start_week_on">Rozpoczynaj tydzień od</string>
     <string name="widgets">Widżety</string>
     <string name="use_same_snooze">Zawsze używaj tego samego czasu trwania drzemki</string>
     <string name="snooze_time">Czas trwania drzemki</string>
@@ -764,7 +794,7 @@
     <string name="show_the_recycle_bin">Pokaż kosz</string>
     <string name="hide_the_recycle_bin">Ukryj kosz</string>
     <string name="open_the_recycle_bin">Otwórz kosz</string>
-    <string name="skip_the_recycle_bin">Pomiń kosz, usuń pliki bezpośrednio</string>
+    <string name="skip_the_recycle_bin">Pomiń kosz, usuń bezpośrednio</string>
     <plurals name="moving_items_into_bin">
         <item quantity="one">Przenoszenie %d elementu do kosza</item>
         <item quantity="few">Przenoszenie %d elementów do kosza</item>
@@ -868,7 +898,7 @@
     <string name="upgrade_calendar">Musisz przenieść przechowywane lokalnie wydarzenia ręcznie przez wyeksportowanie ich do pliku .ics, a następnie ich zaimportowanie. Oba służące do tego przyciski znajdziesz w menu na ekranie głównym.</string>
     <string name="upgraded_from_free_gallery">Witaj,
 \n
-\nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Gdy będziesz z niej zadowolony(-a) i być może przeniesiesz swoje ustawienia i ulubione, możesz odinstalować starą darmową, aby uniknąć przypadkowego jej uruchomienia, ponieważ nie będziesz jej już potrzebować.
+\nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Gdy będziesz z niej zadowolony(-a) i być może przeniesiesz swoje ustawienia i ulubione, możesz odinstalować starą darmową, aby uniknąć przypadkowego jej uruchomienia, ponieważ nie będziesz jej już potrzebować, i zapobiegnie to również wyświetlaniu tego komunikatu.
 \n
 \nDzięki!</string>
     <string name="upgraded_to_pro_gallery">Witaj,
@@ -878,7 +908,7 @@
 \nDzięki!</string>
     <string name="upgraded_from_free">Witaj,
 \n
-\nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Gdy będziesz z niej zadowolony(-a) i być może przeniesiesz swoje dane, możesz odinstalować starą darmową, aby uniknąć przypadkowego jej uruchomienia, ponieważ nie będziesz jej już potrzebować.
+\nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Gdy będziesz z niej zadowolony(-a) i być może przeniesiesz swoje dane, możesz odinstalować starą darmową, aby uniknąć przypadkowego jej uruchomienia, ponieważ nie będziesz jej już potrzebować, i zapobiegnie to również wyświetlaniu tego komunikatu.
 \n
 \nDzięki!</string>
     <string name="upgraded_to_pro">Witaj,
@@ -890,21 +920,21 @@
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli chcesz przenieść przechowywane lokalnie wydarzenia, musisz zrobić to ręcznie, eksportując je do pliku .ics w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n
-\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować.
+\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować i zapobiegnie to wyświetlaniu tego komunikatu.
 \n
 \nDzięki!</string>
     <string name="upgraded_from_free_contacts">Witaj,
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli masz jakieś kontakty przechowywane w „%s”, musisz przenieść je ręcznie, eksportując do pliku .vcf w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n
-\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować.
+\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować i zapobiegnie to wyświetlaniu tego komunikatu.
 \n
 \nDzięki!</string>
     <string name="upgraded_from_free_notes">Witaj,
 \n
 \nWygląda na to, że właśnie uaktualniłeś(-aś) darmową aplikację do płatnej. Jeśli chcesz przenieść swoje notatki, musisz zrobić to ręcznie, eksportując je do pliku w darmowej wersji aplikacji i importując tutaj przez górne menu.
 \n
-\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować.
+\nGdy będziesz zadowolony(-a) z konfiguracji w wersji Pro, możesz odinstalować starą darmową wersję, ponieważ nie będziesz jej już potrzebować i zapobiegnie to wyświetlaniu tego komunikatu.
 \n
 \nDzięki!</string>
     <!-- About -->
@@ -1096,6 +1126,7 @@
     <string name="why_upgrade_footer">100% gwarancja zwrotu pieniędzy</string>
     <string name="why_upgrade_footer_one_time_payment">Jednorazowa płatność</string>
     <string name="why_upgrade_improved_design">Udoskonalony wygląd</string>
+    <string name="why_upgrade_many_other_improvements">Wiele innych ulepszeń</string>
     <!-- Gallery Pro -->
     <string name="why_upgrade_advanced_photo_editor">Zaawansowany edytor zdjęć</string>
     <string name="why_upgrade_advanced_photo_video_editor">Zaawansowany edytor zdjęć i wideo</string>
@@ -1161,8 +1192,10 @@
     <string name="sms_mms_title">SMS MMS (obsługa SMS-ów i MMS-ów)</string>
     <string name="apng_title">APNG Android (obsługa animowanych WebP)</string>
     <string name="pdf_view_pager_title">PDFViewPager (czytnik PDF)</string>
+    <string name="pdf_viewer_title">Android PdfViewer (czytnik PDF)</string>
     <string name="m3u_parser_title">M3U Parser (obsługa plików playlist M3U)</string>
     <string name="android_lame_title">AndroidLame (koder MP3)</string>
+    <string name="zip4j_title">Zip4j (kompresja i dekompresja ZIP)</string>
     <!-- Trial -->
     <string name="trial_expired">Okres próbny wygasł</string>
     <string name="start_free_trial">Rozpocznij darmowy okres próbny</string>

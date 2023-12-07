@@ -1,6 +1,8 @@
 package com.simplemobiletools.commons.helpers
 
 import android.content.Context
+import android.content.res.Configuration
+import android.os.Environment
 import android.text.format.DateFormat
 import com.simplemobiletools.commons.R
 import com.simplemobiletools.commons.extensions.getInternalStoragePath
@@ -195,6 +197,10 @@ open class BaseConfig(val context: Context) {
 
     fun getFolderProtectionType(path: String) = prefs.getInt("$PROTECTED_FOLDER_TYPE$path", PROTECTION_NONE)
 
+    var lastCopyPath: String
+        get() = prefs.getString(LAST_COPY_PATH, "")!!
+        set(lastCopyPath) = prefs.edit().putString(LAST_COPY_PATH, lastCopyPath).apply()
+
     var keepLastModified: Boolean
         get() = prefs.getBoolean(KEEP_LAST_MODIFIED, true)
         set(keepLastModified) = prefs.edit().putBoolean(KEEP_LAST_MODIFIED, keepLastModified).apply()
@@ -385,7 +391,7 @@ open class BaseConfig(val context: Context) {
     private fun getDefaultDateFormat(): String {
         val format = DateFormat.getDateFormat(context)
         val pattern = (format as SimpleDateFormat).toLocalizedPattern()
-        return when (pattern.toLowerCase().replace(" ", "")) {
+        return when (pattern.lowercase().replace(" ", "")) {
             "d.M.y" -> DATE_FORMAT_ONE
             "dd/mm/y" -> DATE_FORMAT_TWO
             "mm/dd/y" -> DATE_FORMAT_THREE
@@ -441,6 +447,10 @@ open class BaseConfig(val context: Context) {
     var blockUnknownNumbers: Boolean
         get() = prefs.getBoolean(BLOCK_UNKNOWN_NUMBERS, false)
         set(blockUnknownNumbers) = prefs.edit().putBoolean(BLOCK_UNKNOWN_NUMBERS, blockUnknownNumbers).apply()
+
+    var blockHiddenNumbers: Boolean
+        get() = prefs.getBoolean(BLOCK_HIDDEN_NUMBERS, false)
+        set(blockHiddenNumbers) = prefs.edit().putBoolean(BLOCK_HIDDEN_NUMBERS, blockHiddenNumbers).apply()
 
     var fontSize: Int
         get() = prefs.getInt(FONT_SIZE, context.resources.getInteger(R.integer.default_font_size))
@@ -544,4 +554,37 @@ open class BaseConfig(val context: Context) {
     var isCustomOrderSelected: Boolean
         get() = prefs.getBoolean(FAVORITES_CUSTOM_ORDER_SELECTED, false)
         set(selected) = prefs.edit().putBoolean(FAVORITES_CUSTOM_ORDER_SELECTED, selected).apply()
+
+    var viewType: Int
+        get() = prefs.getInt(VIEW_TYPE, VIEW_TYPE_LIST)
+        set(viewType) = prefs.edit().putInt(VIEW_TYPE, viewType).apply()
+
+    var contactsGridColumnCount: Int
+        get() = prefs.getInt(CONTACTS_GRID_COLUMN_COUNT, getDefaultContactColumnsCount())
+        set(contactsGridColumnCount) = prefs.edit().putInt(CONTACTS_GRID_COLUMN_COUNT, contactsGridColumnCount).apply()
+
+    private fun getDefaultContactColumnsCount(): Int {
+        val isPortrait = context.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+        return if (isPortrait) {
+            context.resources.getInteger(R.integer.contacts_grid_columns_count_portrait)
+        } else {
+            context.resources.getInteger(R.integer.contacts_grid_columns_count_landscape)
+        }
+    }
+
+    var autoBackup: Boolean
+        get() = prefs.getBoolean(AUTO_BACKUP, false)
+        set(autoBackup) = prefs.edit().putBoolean(AUTO_BACKUP, autoBackup).apply()
+
+    var autoBackupFolder: String
+        get() = prefs.getString(AUTO_BACKUP_FOLDER, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath)!!
+        set(autoBackupFolder) = prefs.edit().putString(AUTO_BACKUP_FOLDER, autoBackupFolder).apply()
+
+    var autoBackupFilename: String
+        get() = prefs.getString(AUTO_BACKUP_FILENAME, "")!!
+        set(autoBackupFilename) = prefs.edit().putString(AUTO_BACKUP_FILENAME, autoBackupFilename).apply()
+
+    var lastAutoBackupTime: Long
+        get() = prefs.getLong(LAST_AUTO_BACKUP_TIME, 0L)
+        set(lastAutoBackupTime) = prefs.edit().putLong(LAST_AUTO_BACKUP_TIME, lastAutoBackupTime).apply()
 }

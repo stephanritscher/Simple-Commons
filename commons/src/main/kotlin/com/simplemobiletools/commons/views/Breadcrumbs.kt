@@ -12,9 +12,10 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import com.simplemobiletools.commons.R
+import com.simplemobiletools.commons.databinding.ItemBreadcrumbBinding
+import com.simplemobiletools.commons.databinding.ItemBreadcrumbFirstBinding
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.models.FileDirItem
-import kotlinx.android.synthetic.main.item_breadcrumb.view.*
 
 class Breadcrumbs(context: Context, attrs: AttributeSet) : HorizontalScrollView(context, attrs) {
     private val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -101,19 +102,6 @@ class Breadcrumbs(context: Context, attrs: AttributeSet) : HorizontalScrollView(
         recomputeStickyRootLocation(left)
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
-        var heightMeasureSpec = heightMeasureSpec
-        if (heightMode == MeasureSpec.UNSPECIFIED || heightMode == MeasureSpec.AT_MOST) {
-            var height = context.resources.getDimensionPixelSize(R.dimen.breadcrumbs_layout_height)
-            if (heightMode == MeasureSpec.AT_MOST) {
-                height = height.coerceAtMost(MeasureSpec.getSize(heightMeasureSpec))
-            }
-            heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY)
-        }
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-    }
-
     private fun scrollToSelectedItem() {
         if (isLayoutDirty) {
             isScrollToSelectedItemPending = true
@@ -184,34 +172,35 @@ class Breadcrumbs(context: Context, attrs: AttributeSet) : HorizontalScrollView(
                 context.getProperBackgroundColor()
             }
 
-            inflater.inflate(R.layout.item_breadcrumb_first, itemsLayout, false).apply {
+
+            ItemBreadcrumbFirstBinding.inflate(inflater, itemsLayout, false).apply {
                 resources.apply {
-                    breadcrumb_text.background = ContextCompat.getDrawable(context, R.drawable.button_background)
-                    breadcrumb_text.background.applyColorFilter(textColor)
+                    breadcrumbText.background = ContextCompat.getDrawable(context, R.drawable.button_background)
+                    breadcrumbText.background.applyColorFilter(textColor)
                     elevation = 1f
                     background = ColorDrawable(firstItemBgColor)
                     val medium = getDimension(R.dimen.medium_margin).toInt()
-                    breadcrumb_text.setPadding(medium, medium, medium, medium)
+                    breadcrumbText.setPadding(medium, medium, medium, medium)
                     setPadding(rootStartPadding, 0, 0, 0)
                 }
 
                 isActivated = item.path.trimEnd('/') == lastPath.trimEnd('/')
-                breadcrumb_text.text = item.name
-                breadcrumb_text.setTextColor(textColorStateList)
-                breadcrumb_text.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
+                breadcrumbText.text = item.name
+                breadcrumbText.setTextColor(textColorStateList)
+                breadcrumbText.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
 
-                itemsLayout.addView(this)
+                itemsLayout.addView(this.root)
 
-                breadcrumb_text.setOnClickListener {
+                breadcrumbText.setOnClickListener {
                     if (itemsLayout.getChildAt(index) != null) {
                         listener?.breadcrumbClicked(index)
                     }
                 }
 
-                tag = item
+                root.tag = item
             }
         } else {
-            inflater.inflate(R.layout.item_breadcrumb, itemsLayout, false).apply {
+            ItemBreadcrumbBinding.inflate(inflater, itemsLayout, false).apply {
                 var textToAdd = item.name
                 if (addPrefix) {
                     textToAdd = "> $textToAdd"
@@ -219,11 +208,11 @@ class Breadcrumbs(context: Context, attrs: AttributeSet) : HorizontalScrollView(
 
                 isActivated = item.path.trimEnd('/') == lastPath.trimEnd('/')
 
-                breadcrumb_text.text = textToAdd
-                breadcrumb_text.setTextColor(textColorStateList)
-                breadcrumb_text.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
+                breadcrumbText.text = textToAdd
+                breadcrumbText.setTextColor(textColorStateList)
+                breadcrumbText.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
 
-                itemsLayout.addView(this)
+                itemsLayout.addView(root)
 
                 setOnClickListener { v ->
                     if (itemsLayout.getChildAt(index) != null && itemsLayout.getChildAt(index) == v) {
@@ -235,7 +224,7 @@ class Breadcrumbs(context: Context, attrs: AttributeSet) : HorizontalScrollView(
                     }
                 }
 
-                tag = item
+                root.tag = item
             }
         }
     }

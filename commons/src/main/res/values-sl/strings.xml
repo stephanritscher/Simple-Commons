@@ -2,6 +2,7 @@
 <resources>
     <string name="ok">OK</string>
     <string name="cancel">Prekliči</string>
+    <string name="close">Close</string>
     <string name="back">Nazaj</string>
     <string name="nothing">Nič</string>
     <string name="later">Pozneje</string>
@@ -76,6 +77,7 @@
     <string name="phone_storage">Shramba telefona</string>
     <string name="phone_storage_hidden">Shramba telefona (ni vidna drugim aplikacijam)</string>
     <string name="audio">Audio</string>
+    <string name="scanning">Scanning…</string>
     <!-- Events -->
     <string name="birthday">Rojstni dan</string>
     <string name="anniversary">Obletnica</string>
@@ -98,6 +100,7 @@
     <string name="increase_column_count">Povečaj število stolpcev</string>
     <string name="reduce_column_count">Zmanjšaj število stolpcev</string>
     <string name="column_count">Število stolpcev</string>
+    <string name="row_count">Row count</string>
     <string name="portrait_column_count">Število pokončnih stolpcev</string>
     <string name="landscape_column_count">Ležeče število stolpcev</string>
     <string name="change_cover_image">Spremeni naslovno fotografijo</string>
@@ -107,6 +110,10 @@
         <item quantity="two">%d stolpca</item>
         <item quantity="few">%d stolpci</item>
         <item quantity="other">%d stolpcev</item>
+    </plurals>
+    <plurals name="row_counts">
+        <item quantity="one">%d row</item>
+        <item quantity="other">%d rows</item>
     </plurals>
     <!-- Blocked numbers -->
     <string name="manage_blocked_numbers">Upravljanje blokiranih številk</string>
@@ -120,8 +127,10 @@
     <string name="must_make_default_dialer">Če želite uporabljati blokirane številke, je potrebno to aplikacijo nastaviti kot privzeto aplikacijo za klicanje.</string>
     <string name="set_as_default">Nastavi kot privzeto</string>
     <string name="block_confirmation">Ste prepričani, da želite blokirati \"%s\"\?</string>
-    <string name="block_unknown_calls">Blokiranje klicev iz neohranjenih stikov</string>
-    <string name="block_unknown_messages">Blokiranje sporočil iz neohranjenih stikov</string>
+    <string name="block_not_stored_calls">Blokiranje klicev iz neohranjenih stikov</string>
+    <string name="block_hidden_calls">Block calls from hidden numbers</string>
+    <string name="block_not_stored_messages">Blokiranje sporočil iz neohranjenih stikov</string>
+    <string name="block_hidden_messages">Block messages from hidden numbers</string>
     <string name="add_blocked_number_helper_text">Vnesite številko ali vzorec (npr. *12345*, +1*8888), da se blokirajo vsi klici in sporočila iz številk, ki ustrezajo vzorcu.</string>
     <string name="must_make_default_caller_id_app">Neznanih številk ni mogoče blokirati brez dovoljenja za ID klicalca.</string>
     <!-- Favorites -->
@@ -133,6 +142,7 @@
     <string name="search">Iskanje</string>
     <string name="search_in_placeholder">Išči v %s</string>
     <string name="type_2_characters">Vpišite vsaj 2 znaka za začetek iskanja.</string>
+    <string name="show_search">Show a search bar</string>
     <string name="search_contacts">Poišči stike</string>
     <string name="search_favorites">Išči priljubljene</string>
     <string name="search_apps">Poišči aplikacije</string>
@@ -162,11 +172,16 @@
     <string name="no_audio_permissions">Potrebno je dovoljenje za zvok</string>
     <string name="no_permission">Brez dovoljenja</string>
     <string name="allow_notifications_reminders">You must allow the app displaying notifications, else it cannot show reminders.</string>
+    <string name="allow_full_screen_notifications_reminders">You must allow the app displaying full screen notifications, else you may miss some reminders.</string>
     <string name="allow_notifications_files">You must allow the app displaying notifications, else it cannot show the progress bar.</string>
     <string name="allow_notifications_music_player">You must allow the app displaying notifications, else it cannot play songs.</string>
     <string name="allow_notifications_voice_recorder">You must allow the app displaying notifications, else it cannot record audio.</string>
     <string name="allow_notifications_incoming_calls">You must allow the app displaying notifications, else it cannot show incoming calls.</string>
+    <string name="allow_full_screen_notifications_incoming_calls">You must allow the app displaying full screen notifications, else you may miss some incoming calls.</string>
     <string name="allow_notifications_incoming_messages">You must allow the app displaying notifications, else it cannot show incoming messages.</string>
+    <string name="allow_alarm_scheduled_messages">You must allow the app accessing internal alarms, else it cannot send scheduled messages.</string>
+    <string name="allow_alarm_sleep_timer">You must allow the app accessing internal alarms, else it cannot turn off the application after sleep timer.</string>
+    <string name="allow_location_permission">You must allow the app accessing your location, else it won\'t know it.</string>
     <string name="grant_permission">Grant Permission</string>
     <string name="permission_required">Permission Required</string>
     <!-- Renaming -->
@@ -314,6 +329,7 @@
     <string name="duration">Trajanje</string>
     <string name="artist">Izvajalec</string>
     <string name="album">Album</string>
+    <string name="genre">Genre</string>
     <string name="focal_length">Goriščna razdalja</string>
     <string name="exposure_time">Čas osvetlitve</string>
     <string name="iso_speed">ISO občutljivost</string>
@@ -382,6 +398,7 @@
     <string name="unhide_folder">Odkrij mapo</string>
     <string name="temporarily_show_hidden">Začasno pokaži skrito</string>
     <string name="stop_showing_hidden">Ne prikazuj skritih medijev</string>
+    <string name="allow_access_more_media">Allow access to more media</string>
     <string name="maximum_share_reached">Toliko vsebine naenkrat ni mogoče deliti</string>
     <string name="empty_and_disable_recycle_bin">Izprazni in onemogoči Koš</string>
     <string name="undo">Razveljavi</string>
@@ -406,6 +423,9 @@
     <string name="contact_details">Podrobnosti stika</string>
     <string name="add_contact">Dodaj stik</string>
     <string name="wallpapers">Ozadja</string>
+    <string name="show_line_numbers">Show line numbers</string>
+    <string name="hide_line_numbers">Hide line numbers</string>
+    <string name="sleep_timer">Časovnik za spanje</string>
     <!-- Sorting -->
     <string name="sort_by">Razvrsti po</string>
     <string name="name">Ime</string>
@@ -413,6 +433,7 @@
     <string name="last_modified">Zadnja sprememba</string>
     <string name="date_created">Datum nastanka</string>
     <string name="date_taken">Datum snemanja</string>
+    <string name="date_added">Date added</string>
     <string name="title">Naslov</string>
     <string name="filename">Ime datoteke</string>
     <string name="extension">Datotečna končnica</string>
@@ -474,6 +495,12 @@
     <string name="lock_folder_pro">Zakleni mapo (Pro)</string>
     <string name="unlock_folder">Odkleni mapo</string>
     <string name="lock_folder_notice">Ta zaščita deluje samo v tej aplikaciji in ni mišljena kot nadomestek pravega sistemskega šifriranja map.</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password">Password</string>
+    <string name="add_password">Add password</string>
+    <string name="empty_password_new">Please enter a password</string>
+    <string name="empty_password">Please enter the password</string>
+    <string name="invalid_password">Incorrect password</string>
     <!-- Times -->
     <string name="yesterday">Včeraj</string>
     <string name="today">Danes</string>
@@ -712,6 +739,7 @@
     <string name="use_24_hour_time_format">Uporabljaj 24-urni format</string>
     <string name="change_date_and_time_format">Spremeni obliko zapisa datuma in ure</string>
     <string name="sunday_first">Začni teden v nedeljo</string>
+    <string name="start_week_on">Start week on</string>
     <string name="widgets">Pripomočki</string>
     <string name="use_same_snooze">Vedno uporabi enak čas dremeža</string>
     <string name="snooze_time">Čas dremeža</string>
@@ -877,7 +905,7 @@
     <string name="upgrade_calendar">Lokalno shranjene dogodke lahko migrirate ročno preko izvoza v .ics datoteko, katero kasneje uvozite nazaj. Ukaze za uvoz/izvoz najdete v meniju na glavnem zaslonu.</string>
     <string name="upgraded_from_free_gallery">Pozdravljeni,
 \n
-\nkaže, da ste pravkar nadgradili iz brezplačne verzije. Ko boste s to novo zadovoljni in boste morda prenesli nastavitve in priljubljene, lahko staro brezplačno verzijo odstranite. Tako se izognete, da bi jo pomotoma zagnali, saj je ne potrebujete več.
+\nkaže, da ste pravkar nadgradili iz brezplačne verzije. Ko boste s to novo zadovoljni in boste morda prenesli nastavitve in priljubljene, lahko staro brezplačno verzijo odstranite. Tako se izognete, da bi jo pomotoma zagnali, saj je ne potrebujete več, prav tako bo preprečilo prikaz tega pogovornega okna.
 \n
 \nHvala!</string>
     <string name="upgraded_to_pro_gallery">Pozdravljeni,
@@ -887,7 +915,7 @@
 \nHvala!</string>
     <string name="upgraded_from_free">Pozdravljeni,
 \n
-\nkaže, da ste pravkar nadgradili iz brezplačne verzije. Ko boste s to novo zadovoljni in boste morda prenesli podatke, lahko staro brezplačno verzijo odstranite. Tako se izognete, da bi jo pomotoma zagnali, saj je ne potrebujete več.
+\nkaže, da ste pravkar nadgradili iz brezplačne verzije. Ko boste s to novo zadovoljni in boste morda prenesli podatke, lahko staro brezplačno verzijo odstranite. Tako se izognete, da bi jo pomotoma zagnali, saj je ne potrebujete več, prav tako bo preprečilo prikaz tega pogovornega okna.
 \n
 \nHvala!</string>
     <string name="upgraded_to_pro">Pozdravljeni,
@@ -899,21 +927,21 @@
 \n
 \nkaže, da ste pravkar nadgradili iz brezplačne verzije. Če želite migrirati lokalno shranjene dogodke, morate to storiti ročno. Izvozite jih v .ics datoteko v brezplačni verziji in jih uvozite tukaj v zgornjem meniju.
 \n
-\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali.
+\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali, prav tako bo preprečilo prikaz tega pogovornega okna.
 \n
 \nHvala!</string>
     <string name="upgraded_from_free_contacts">Pozdravljeni,
 \n
 \nkaže, da ste pravkar nadgradili iz brezplačne verzije. Če ste imeli shranjene kakšne stike pod \"%s\", jih morate migrirati ročno. Izvozite jih v .vcf datoteko v brezplačni verziji in jih uvozite tukaj v zgornjem meniju.
 \n
-\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali.
+\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali, prav tako bo preprečilo prikaz tega pogovornega okna.
 \n
 \nHvala!</string>
     <string name="upgraded_from_free_notes">Pozdravljeni,
 \n
 \nkaže, da ste pravkar nadgradili iz brezplačne verzije. Če želite migrirati lokalno shranjene beležke, morate to storiti ročno. Izvozite jih v datoteko v brezplačni verziji in jih uvozite tukaj v zgornjem meniju.
 \n
-\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali.
+\nKo boste zadovoljni z nastavitvami v Pro verziji, lahko staro brezplačno verzijo odstranite, saj je ne boste več potrebovali, prav tako bo preprečilo prikaz tega pogovornega okna.
 \n
 \nHvala!</string>
     <!-- About -->
@@ -1104,6 +1132,7 @@
     <string name="why_upgrade_footer">100% jamstvo za vračilo denarja</string>
     <string name="why_upgrade_footer_one_time_payment">Enkratno plačilo</string>
     <string name="why_upgrade_improved_design">Izboljšan dizajn</string>
+    <string name="why_upgrade_many_other_improvements">Many other improvements</string>
     <!-- Gallery Pro -->
     <string name="why_upgrade_advanced_photo_editor">Napredni urejevalnik fotografij</string>
     <string name="why_upgrade_advanced_photo_video_editor">Napredni urejevalnik fotografij in videoposnetkov</string>
@@ -1169,8 +1198,10 @@
     <string name="sms_mms_title">SMS MMS (ravnanje z SMS in MMS)</string>
     <string name="apng_title">APNG Android (podpora za animirani WebP)</string>
     <string name="pdf_view_pager_title">PDFViewPager (pregledovalnik PDF)</string>
+    <string name="pdf_viewer_title">Android PdfViewer (pregledovalnik PDF)</string>
     <string name="m3u_parser_title">Razčlenjevalnik M3U (prepoznava datotek m3u)</string>
     <string name="android_lame_title">AndroidLame (mp3 kodiranje)</string>
+    <string name="zip4j_title">Zip4j (ZIP compression and decompression)</string>
     <!-- Trial -->
     <string name="trial_expired">Preizkusno obdobje je poteklo</string>
     <string name="start_free_trial">Začni preizkusno obdobje</string>

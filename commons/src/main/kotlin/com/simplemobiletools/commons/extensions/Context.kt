@@ -15,10 +15,7 @@ import android.graphics.Point
 import android.media.MediaMetadataRetriever
 import android.media.RingtoneManager
 import android.net.Uri
-import android.os.Build
-import android.os.Environment
-import android.os.Handler
-import android.os.Looper
+import android.os.*
 import android.provider.BaseColumns
 import android.provider.BlockedNumberContract.BlockedNumbers
 import android.provider.ContactsContract.CommonDataKinds.BaseTypes
@@ -225,6 +222,8 @@ private fun isExternalStorageDocument(uri: Uri) = uri.authority == "com.android.
 
 fun Context.hasPermission(permId: Int) = ContextCompat.checkSelfPermission(this, getPermissionString(permId)) == PackageManager.PERMISSION_GRANTED
 
+fun Context.hasAllPermissions(permIds: Collection<Int>) = permIds.all(this::hasPermission)
+
 fun Context.getPermissionString(id: Int) = when (id) {
     PERMISSION_READ_STORAGE -> Manifest.permission.READ_EXTERNAL_STORAGE
     PERMISSION_WRITE_STORAGE -> Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -246,6 +245,10 @@ fun Context.getPermissionString(id: Int) = when (id) {
     PERMISSION_READ_MEDIA_IMAGES -> Manifest.permission.READ_MEDIA_IMAGES
     PERMISSION_READ_MEDIA_VIDEO -> Manifest.permission.READ_MEDIA_VIDEO
     PERMISSION_READ_MEDIA_AUDIO -> Manifest.permission.READ_MEDIA_AUDIO
+    PERMISSION_READ_MEDIA_VISUAL_USER_SELECTED -> Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
+    PERMISSION_ACCESS_COARSE_LOCATION -> Manifest.permission.ACCESS_COARSE_LOCATION
+    PERMISSION_ACCESS_FINE_LOCATION -> Manifest.permission.ACCESS_FINE_LOCATION
+    PERMISSION_READ_MEDIA_VISUAL_USER_SELECTED -> Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
     else -> ""
 }
 
@@ -327,6 +330,30 @@ fun Context.queryCursor(
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
+fun Context.queryCursor(
+    uri: Uri,
+    projection: Array<String>,
+    queryArgs: Bundle,
+    showErrors: Boolean = false,
+    callback: (cursor: Cursor) -> Unit
+) {
+    try {
+        val cursor = contentResolver.query(uri, projection, queryArgs, null)
+        cursor?.use {
+            if (cursor.moveToFirst()) {
+                do {
+                    callback(cursor)
+                } while (cursor.moveToNext())
+            }
+        }
+    } catch (e: Exception) {
+        if (showErrors) {
+            showErrorToast(e)
+        }
+    }
+}
+
 fun Context.getFilenameFromUri(uri: Uri): String {
     return if (uri.scheme == "file") {
         File(uri.toString()).name
@@ -351,12 +378,15 @@ fun Context.ensurePublicUri(path: String, applicationId: String): Uri? {
         hasProperStoredAndroidTreeUri(path) && isRestrictedSAFOnlyRoot(path) -> {
             getAndroidSAFUri(path)
         }
+
         hasProperStoredDocumentUriSdk30(path) && isAccessibleWithSAFSdk30(path) -> {
             createDocumentUriUsingFirstParentTreeUri(path)
         }
+
         isPathOnOTG(path) -> {
             getDocumentFile(path)?.uri
         }
+
         else -> {
             val uri = Uri.parse(path)
             if (uri.scheme == "content") {
@@ -454,6 +484,7 @@ fun Context.isOrWasThankYouInstalled(): Boolean {
             baseConfig.hadThankYouInstalled = true
             true
         }
+
         else -> false
     }
 }
@@ -552,30 +583,37 @@ fun Context.getFormattedSeconds(seconds: Int, showBefore: Boolean = true) = when
                 val minutes = -seconds / 60
                 getString(R.string.during_day_at).format(minutes / 60, minutes % 60)
             }
+
             seconds % YEAR_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.years_before else R.plurals.by_years
                 resources.getQuantityString(base, seconds / YEAR_SECONDS, seconds / YEAR_SECONDS)
             }
+
             seconds % MONTH_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.months_before else R.plurals.by_months
                 resources.getQuantityString(base, seconds / MONTH_SECONDS, seconds / MONTH_SECONDS)
             }
+
             seconds % WEEK_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.weeks_before else R.plurals.by_weeks
                 resources.getQuantityString(base, seconds / WEEK_SECONDS, seconds / WEEK_SECONDS)
             }
+
             seconds % DAY_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.days_before else R.plurals.by_days
                 resources.getQuantityString(base, seconds / DAY_SECONDS, seconds / DAY_SECONDS)
             }
+
             seconds % HOUR_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.hours_before else R.plurals.by_hours
                 resources.getQuantityString(base, seconds / HOUR_SECONDS, seconds / HOUR_SECONDS)
             }
+
             seconds % MINUTE_SECONDS == 0 -> {
                 val base = if (showBefore) R.plurals.minutes_before else R.plurals.by_minutes
                 resources.getQuantityString(base, seconds / MINUTE_SECONDS, seconds / MINUTE_SECONDS)
             }
+
             else -> {
                 val base = if (showBefore) R.plurals.seconds_before else R.plurals.by_seconds
                 resources.getQuantityString(base, seconds, seconds)
@@ -958,6 +996,47 @@ fun Context.isDefaultDialer(): Boolean {
     }
 }
 
+fun Context.getContactsHasMap(callback: (HashMap<String, String>) -> Unit) {
+    ContactsHelper(this).getContacts(showOnlyContactsWithNumbers = true) { contactList ->
+        val privateContacts: HashMap<String, String> = HashMap()
+        for (contact in contactList) {
+            for (phoneNumber in contact.phoneNumbers) {
+                privateContacts[phoneNumber.value] = contact.name
+            }
+        }
+        callback(privateContacts)
+    }
+}
+
+@TargetApi(Build.VERSION_CODES.N)
+fun Context.getBlockedNumbersWithContact(callback: (ArrayList<BlockedNumber>) -> Unit) {
+    getContactsHasMap { contacts ->
+        val blockedNumbers = ArrayList<BlockedNumber>()
+        if (!isNougatPlus() || !isDefaultDialer()) {
+            callback(blockedNumbers)
+        }
+
+        val uri = BlockedNumbers.CONTENT_URI
+        val projection = arrayOf(
+            BlockedNumbers.COLUMN_ID,
+            BlockedNumbers.COLUMN_ORIGINAL_NUMBER,
+            BlockedNumbers.COLUMN_E164_NUMBER,
+        )
+
+        queryCursor(uri, projection) { cursor ->
+            val id = cursor.getLongValue(BlockedNumbers.COLUMN_ID)
+            val number = cursor.getStringValue(BlockedNumbers.COLUMN_ORIGINAL_NUMBER) ?: ""
+            val normalizedNumber = cursor.getStringValue(BlockedNumbers.COLUMN_E164_NUMBER) ?: number
+            val comparableNumber = normalizedNumber.trimToComparableNumber()
+
+            val contactName = contacts[number] ?: getString(R.string.unknown)
+            val blockedNumber = BlockedNumber(id, number, normalizedNumber, comparableNumber, contactName)
+            blockedNumbers.add(blockedNumber)
+        }
+        callback(blockedNumbers)
+    }
+}
+
 @TargetApi(Build.VERSION_CODES.N)
 fun Context.getBlockedNumbers(): ArrayList<BlockedNumber> {
     val blockedNumbers = ArrayList<BlockedNumber>()
@@ -1076,6 +1155,7 @@ fun Context.sendEmailIntent(recipient: String) {
         launchActivityIntent(this)
     }
 }
+
 fun Context.openNotificationSettings() {
     if (isOreoPlus()) {
         val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
@@ -1085,6 +1165,42 @@ fun Context.openNotificationSettings() {
         // For Android versions below Oreo, you can't directly open the app's notification settings.
         // You can open the general notification settings instead.
         val intent = Intent(Settings.ACTION_SETTINGS)
+        startActivity(intent)
+    }
+}
+
+fun Context.openDeviceSettings() {
+    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+        data = Uri.fromParts("package", packageName, null)
+    }
+
+    try {
+        startActivity(intent)
+    } catch (e: Exception) {
+        showErrorToast(e)
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.S)
+fun Context.openRequestExactAlarmSettings(appId: String) {
+    if (isSPlus()) {
+        val uri = Uri.fromParts("package", appId, null)
+        val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM)
+        intent.data = uri
+        startActivity(intent)
+    }
+}
+
+fun Context.canUseFullScreenIntent(): Boolean {
+    return !isUpsideDownCakePlus() || notificationManager.canUseFullScreenIntent()
+}
+
+@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+fun Context.openFullScreenIntentSettings(appId: String) {
+    if (isUpsideDownCakePlus()) {
+        val uri = Uri.fromParts("package", appId, null)
+        val intent = Intent(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT)
+        intent.data = uri
         startActivity(intent)
     }
 }

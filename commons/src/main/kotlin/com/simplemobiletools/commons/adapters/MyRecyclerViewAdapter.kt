@@ -12,6 +12,8 @@ import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.interfaces.MyActionModeCallback
 import com.simplemobiletools.commons.views.MyRecyclerView
+import kotlin.math.max
+import kotlin.math.min
 
 abstract class MyRecyclerViewAdapter(val activity: BaseSimpleActivity, val recyclerView: MyRecyclerView, val itemClick: (Any) -> Unit) :
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
@@ -89,7 +91,7 @@ abstract class MyRecyclerViewAdapter(val activity: BaseSimpleActivity, val recyc
 
                 if (baseConfig.isUsingSystemTheme) {
                     actBarTextView?.onGlobalLayout {
-                        val backArrow = activity.findViewById<ImageView>(R.id.action_mode_close_button)
+                        val backArrow = activity.findViewById<ImageView>(androidx.appcompat.R.id.action_mode_close_button)
                         backArrow?.applyColorFilter(bgColor.getContrastColor())
                     }
                 }
@@ -162,8 +164,8 @@ abstract class MyRecyclerViewAdapter(val activity: BaseSimpleActivity, val recyc
         lastLongPressedItem = if (lastLongPressedItem == -1) {
             position
         } else {
-            val min = Math.min(lastLongPressedItem, position)
-            val max = Math.max(lastLongPressedItem, position)
+            val min = min(lastLongPressedItem, position)
+            val max = max(lastLongPressedItem, position)
             for (i in min..max) {
                 toggleItemSelection(true, i, false)
             }
@@ -295,6 +297,10 @@ abstract class MyRecyclerViewAdapter(val activity: BaseSimpleActivity, val recyc
 
     protected fun createViewHolder(layoutType: Int, parent: ViewGroup?): ViewHolder {
         val view = layoutInflater.inflate(layoutType, parent, false)
+        return ViewHolder(view)
+    }
+
+    protected fun createViewHolder(view: View): ViewHolder {
         return ViewHolder(view)
     }
 

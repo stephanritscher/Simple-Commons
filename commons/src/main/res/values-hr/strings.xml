@@ -2,6 +2,7 @@
 <resources>
     <string name="ok">U redu</string>
     <string name="cancel">Poništi</string>
+    <string name="close">Close</string>
     <string name="back">Nazad</string>
     <string name="nothing">Ništa</string>
     <string name="later">Kasnije</string>
@@ -77,6 +78,7 @@
     <string name="phone_storage">Spremište na mobitelu</string>
     <string name="phone_storage_hidden">Spremište na mobitelu (nije vidljivo za druge aplikacije)</string>
     <string name="audio">Audio</string>
+    <string name="scanning">Scanning…</string>
     <!-- Events -->
     <string name="birthday">Rođendan</string>
     <string name="anniversary">Obljetnica</string>
@@ -99,6 +101,7 @@
     <string name="increase_column_count">Povećaj broj stupaca</string>
     <string name="reduce_column_count">Smanji broj stupaca</string>
     <string name="column_count">Broj stupaca</string>
+    <string name="row_count">Row count</string>
     <string name="portrait_column_count">Broj stupaca portreta</string>
     <string name="landscape_column_count">Broj vodoravnih stupaca</string>
     <string name="change_cover_image">Promjeni naslovnu sliku</string>
@@ -107,6 +110,10 @@
         <item quantity="one">%d stupac</item>
         <item quantity="few">%d stupca</item>
         <item quantity="other">%d stupaca</item>
+    </plurals>
+    <plurals name="row_counts">
+        <item quantity="one">%d row</item>
+        <item quantity="other">%d rows</item>
     </plurals>
     <!-- Blocked numbers -->
     <string name="manage_blocked_numbers">Upravljanje blokiranim brojevima</string>
@@ -120,8 +127,10 @@
     <string name="must_make_default_dialer">Za korištenje blokiranih brojeva, ovu aplikaciju moraš postaviti kao zadanu za biranje brojeva.</string>
     <string name="set_as_default">Postavi na zadano</string>
     <string name="block_confirmation">Stvarno želiš blokirati „%s”\?</string>
-    <string name="block_unknown_calls">Blokiraj pozive nepohranjenih kontakata</string>
-    <string name="block_unknown_messages">Blokiraj poruke nepohranjenih kontakata</string>
+    <string name="block_not_stored_calls">Blokiraj pozive nepohranjenih kontakata</string>
+    <string name="block_hidden_calls">Block calls from hidden numbers</string>
+    <string name="block_not_stored_messages">Blokiraj poruke nepohranjenih kontakata</string>
+    <string name="block_hidden_messages">Block messages from hidden numbers</string>
     <string name="add_blocked_number_helper_text">Upiši broj ili uzorak (npr. *12345*, +1*8888) za blokiranje svih poziva i poruka od brojeva koji odgovaraju uzorku.</string>
     <string name="must_make_default_caller_id_app">Blokiranje nepoznatih brojeva nije moguće bez dozvole ID-a pozivatelja.</string>
     <!-- Favorites -->
@@ -133,6 +142,7 @@
     <string name="search">Traži</string>
     <string name="search_in_placeholder">Traži u %s</string>
     <string name="type_2_characters">Upiši barem dva znaka za pokretanje pretrage.</string>
+    <string name="show_search">Show a search bar</string>
     <string name="search_contacts">Pretraži kontakte</string>
     <string name="search_favorites">Pretraži favorite</string>
     <string name="search_apps">Pretraži aplikacije</string>
@@ -162,11 +172,16 @@
     <string name="no_audio_permissions">Potrebno je dopuštenje za zvuk</string>
     <string name="no_permission">Bez dozvole</string>
     <string name="allow_notifications_reminders">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može prikazivati podsjetnike.</string>
+    <string name="allow_full_screen_notifications_reminders">You must allow the app displaying full screen notifications, else you may miss some reminders.</string>
     <string name="allow_notifications_files">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može prikazivati traku napretka.</string>
     <string name="allow_notifications_music_player">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može reproducirati pjesme.</string>
     <string name="allow_notifications_voice_recorder">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može snimati zvuk.</string>
     <string name="allow_notifications_incoming_calls">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može prikazivati dolazne pozive.</string>
+    <string name="allow_full_screen_notifications_incoming_calls">You must allow the app displaying full screen notifications, else you may miss some incoming calls.</string>
     <string name="allow_notifications_incoming_messages">Aplikaciji moraš dozvoliti prikazivanje obavijesti, inače ne može prikazivati dolazne poruke.</string>
+    <string name="allow_alarm_scheduled_messages">You must allow the app accessing internal alarms, else it cannot send scheduled messages.</string>
+    <string name="allow_alarm_sleep_timer">You must allow the app accessing internal alarms, else it cannot turn off the application after sleep timer.</string>
+    <string name="allow_location_permission">You must allow the app accessing your location, else it won\'t know it.</string>
     <string name="grant_permission">Odobri dozvolu</string>
     <string name="permission_required">Zahtijeva dozvolu</string>
     <!-- Renaming -->
@@ -311,6 +326,7 @@
     <string name="duration">Trajanje</string>
     <string name="artist">Umjetnik</string>
     <string name="album">Album</string>
+    <string name="genre">Genre</string>
     <string name="focal_length">Žarišna duljina</string>
     <string name="exposure_time">Vrijeme izloženosti</string>
     <string name="iso_speed">ISO brzina</string>
@@ -384,6 +400,7 @@
     <string name="unhide_folder">Otkrij mapu</string>
     <string name="temporarily_show_hidden">Privremeno prikaži skriveno</string>
     <string name="stop_showing_hidden">Zaustavi prikazivanje skrivenih stavki</string>
+    <string name="allow_access_more_media">Allow access to more media</string>
     <string name="maximum_share_reached">Nije moguće dijeliti ovoliko stavki odjednom</string>
     <string name="empty_and_disable_recycle_bin">Isprazni i onemogući koš za smeće</string>
     <string name="undo">Poništi</string>
@@ -408,6 +425,9 @@
     <string name="contact_details">Detalji kontakta</string>
     <string name="add_contact">Dodaj kontakt</string>
     <string name="wallpapers">Slike pozadine</string>
+    <string name="show_line_numbers">Show line numbers</string>
+    <string name="hide_line_numbers">Hide line numbers</string>
+    <string name="sleep_timer">Mjerač vremena za isključivanje</string>
     <!-- Sorting -->
     <string name="sort_by">Sortiraj po</string>
     <string name="name">Naziv</string>
@@ -415,6 +435,7 @@
     <string name="last_modified">Datum zadnje izmjenjene</string>
     <string name="date_created">Datum stvaranja</string>
     <string name="date_taken">Datum snimanja</string>
+    <string name="date_added">Date added</string>
     <string name="title">Naslov</string>
     <string name="filename">Naziv datoteke</string>
     <string name="extension">Ekstenzija</string>
@@ -475,6 +496,12 @@
     <string name="lock_folder_pro">Zaključaj mapu (Pro)</string>
     <string name="unlock_folder">Otključaj mapu</string>
     <string name="lock_folder_notice">Ova zaštita radi samo u ovoj aplikaciji. Nije namijenjena za stvarno mijenjanje šifriranja mapa cijelog sustava.</string>
+    <string name="enter_password">Unesite lozinku</string>
+    <string name="password">Lozinka</string>
+    <string name="add_password">Dodaj lozinku</string>
+    <string name="empty_password_new">Molimo unesite lozinku</string>
+    <string name="empty_password">Molimo unesite lozinku</string>
+    <string name="invalid_password">Netočna lozinka</string>
     <!-- Times -->
     <string name="yesterday">Jučer</string>
     <string name="today">Danas</string>
@@ -683,6 +710,7 @@
     <string name="use_24_hour_time_format">Koristite 24-satni format</string>
     <string name="change_date_and_time_format">Promijeni formate datuma i vremena</string>
     <string name="sunday_first">Početak tjedna u nedjelju</string>
+    <string name="start_week_on">Start week on</string>
     <string name="widgets">Widgeti</string>
     <string name="use_same_snooze">Uvijek koristi isto vrijeme odgode</string>
     <string name="snooze_time">Vrijeme odgode</string>
@@ -1069,6 +1097,7 @@
     <string name="why_upgrade_footer">Jamstvo za 100 % povrata novca</string>
     <string name="why_upgrade_footer_one_time_payment">Jednokratno plaćanje</string>
     <string name="why_upgrade_improved_design">Poboljšan dizajn</string>
+    <string name="why_upgrade_many_other_improvements">Many other improvements</string>
     <!-- Gallery Pro -->
     <string name="why_upgrade_advanced_photo_editor">Napredni uređivač fotografija</string>
     <string name="why_upgrade_advanced_photo_video_editor">Napredni uređivač fotografija i videa</string>
@@ -1134,8 +1163,10 @@
     <string name="sms_mms_title">SMS MMS (rukovanje SMS i MMS porukama)</string>
     <string name="apng_title">APNG Android (podrška za animirani WebP)</string>
     <string name="pdf_view_pager_title">PDFViewPager (čitač PDF-ova)</string>
+    <string name="pdf_viewer_title">Android PdfViewer (čitač PDF-ova)</string>
     <string name="m3u_parser_title">M3U Parser (rukovanje datotekama m3u playlista)</string>
     <string name="android_lame_title">AndroidLame (mp3 koder)</string>
+    <string name="zip4j_title">Zip4j (ZIP kompresija i dekompresija)</string>
     <!-- Trial -->
     <string name="trial_expired">Probni rok je istekao</string>
     <string name="start_free_trial">Pokreni besplatan probni rok</string>

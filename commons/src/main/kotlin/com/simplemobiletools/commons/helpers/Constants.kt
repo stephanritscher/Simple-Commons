@@ -7,6 +7,7 @@ import android.os.Looper
 import android.provider.ContactsContract
 import android.util.Log
 import androidx.annotation.ChecksSdkIntAtLeast
+import androidx.annotation.StringRes
 import com.simplemobiletools.commons.R
 import com.simplemobiletools.commons.extensions.normalizeString
 import com.simplemobiletools.commons.models.contacts.LocalContact
@@ -121,6 +122,7 @@ const val WAS_CUSTOM_THEME_SWITCH_DESCRIPTION_SHOWN = "was_custom_theme_switch_d
 const val SHOW_INFO_BUBBLE = "show_info_bubble"
 const val LAST_CONFLICT_RESOLUTION = "last_conflict_resolution"
 const val LAST_CONFLICT_APPLY_TO_ALL = "last_conflict_apply_to_all"
+const val LAST_COPY_PATH = "last_copy_path"
 const val HAD_THANK_YOU_INSTALLED = "had_thank_you_installed"
 const val SKIP_DELETE_CONFIRMATION = "skip_delete_confirmation"
 const val ENABLE_PULL_TO_REFRESH = "enable_pull_to_refresh"
@@ -160,6 +162,7 @@ const val LAST_EXPORTED_SETTINGS_FOLDER = "last_exported_settings_folder"
 const val LAST_EXPORTED_SETTINGS_FILE = "last_exported_settings_file"
 const val LAST_BLOCKED_NUMBERS_EXPORT_PATH = "last_blocked_numbers_export_path"
 const val BLOCK_UNKNOWN_NUMBERS = "block_unknown_numbers"
+const val BLOCK_HIDDEN_NUMBERS = "block_hidden_numbers"
 const val FONT_SIZE = "font_size"
 const val WAS_MESSENGER_RECORDER_SHOWN = "was_messenger_recorder_shown"
 const val DEFAULT_TAB = "default_tab"
@@ -183,6 +186,15 @@ const val SHOW_PRIVATE_CONTACTS = "show_private_contacts"
 const val MERGE_DUPLICATE_CONTACTS = "merge_duplicate_contacts"
 const val FAVORITES_CONTACTS_ORDER = "favorites_contacts_order"
 const val FAVORITES_CUSTOM_ORDER_SELECTED = "favorites_custom_order_selected"
+const val VIEW_TYPE = "view_type"
+const val CONTACTS_GRID_COLUMN_COUNT = "contacts_grid_column_count"
+const val AUTO_BACKUP = "auto_backup"
+const val AUTO_BACKUP_FOLDER = "auto_backup_folder"
+const val AUTO_BACKUP_FILENAME = "auto_backup_filename"
+const val LAST_AUTO_BACKUP_TIME = "last_auto_backup_time"
+
+// contact grid view constants
+const val CONTACTS_GRID_MAX_COLUMNS_COUNT = 10
 
 // phone number/email types
 const val CELL = "CELL"
@@ -235,6 +247,8 @@ const val LICENSE_APNG = 268435456L
 const val LICENSE_PDF_VIEW_PAGER = 536870912L
 const val LICENSE_M3U_PARSER = 1073741824L
 const val LICENSE_ANDROID_LAME = 2147483648L
+const val LICENSE_PDF_VIEWER = 4294967296L
+const val LICENSE_ZIP4J = 8589934592L
 
 // global intents
 const val OPEN_DOCUMENT_TREE_FOR_ANDROID_DATA_OR_OBB = 1000
@@ -308,6 +322,9 @@ const val PERMISSION_POST_NOTIFICATIONS = 17
 const val PERMISSION_READ_MEDIA_IMAGES = 18
 const val PERMISSION_READ_MEDIA_VIDEO = 19
 const val PERMISSION_READ_MEDIA_AUDIO = 20
+const val PERMISSION_ACCESS_COARSE_LOCATION = 21
+const val PERMISSION_ACCESS_FINE_LOCATION = 22
+const val PERMISSION_READ_MEDIA_VISUAL_USER_SELECTED = 23
 
 // conflict resolving
 const val CONFLICT_SKIP = 1
@@ -348,7 +365,7 @@ const val TAB_STORAGE_ANALYSIS = 64
 
 val photoExtensions: Array<String> get() = arrayOf(".jpg", ".png", ".jpeg", ".bmp", ".webp", ".heic", ".heif", ".apng", ".avif")
 val videoExtensions: Array<String> get() = arrayOf(".mp4", ".mkv", ".webm", ".avi", ".3gp", ".mov", ".m4v", ".3gpp")
-val audioExtensions: Array<String> get() = arrayOf(".mp3", ".wav", ".wma", ".ogg", ".m4a", ".opus", ".flac", ".aac")
+val audioExtensions: Array<String> get() = arrayOf(".mp3", ".wav", ".wma", ".ogg", ".m4a", ".opus", ".flac", ".aac", ".m4b")
 val rawExtensions: Array<String> get() = arrayOf(".dng", ".orf", ".nef", ".arw", ".rw2", ".cr2", ".cr3")
 
 val extensionsSupportingEXIF: Array<String> get() = arrayOf(".jpg", ".jpeg", ".png", ".webp", ".dng")
@@ -372,10 +389,10 @@ const val TIME_FORMAT_12 = "hh:mm a"
 const val TIME_FORMAT_24 = "HH:mm"
 
 // possible icons at the top left corner
-enum class NavigationIcon {
-    Cross,
-    Arrow,
-    None
+enum class NavigationIcon(@StringRes val accessibilityResId: Int) {
+    Cross(R.string.close),
+    Arrow(R.string.back),
+    None(0)
 }
 
 val appIconColorStrings = arrayListOf(
@@ -418,6 +435,7 @@ val letterBackgroundColors = arrayListOf(
 // view types
 const val VIEW_TYPE_GRID = 1
 const val VIEW_TYPE_LIST = 2
+const val VIEW_TYPE_UNEVEN_GRID = 3
 
 fun isOnMainThread() = Looper.myLooper() == Looper.getMainLooper()
 
@@ -457,6 +475,9 @@ fun isSPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
 @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.TIRAMISU)
 fun isTiramisuPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+fun isUpsideDownCakePlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 
 fun getDateFormats() = arrayListOf(
     "--MM-dd",
@@ -531,6 +552,8 @@ fun getFilePlaceholderDrawables(context: Context): HashMap<String, Drawable> {
         put("ogg", R.drawable.ic_file_ogg)
         put("pdf", R.drawable.ic_file_pdf)
         put("plproj", R.drawable.ic_file_plproj)
+        put("ppt", R.drawable.ic_file_ppt)
+        put("pptx", R.drawable.ic_file_ppt)
         put("prproj", R.drawable.ic_file_prproj)
         put("psd", R.drawable.ic_file_psd)
         put("rtf", R.drawable.ic_file_rtf)
@@ -542,6 +565,7 @@ fun getFilePlaceholderDrawables(context: Context): HashMap<String, Drawable> {
         put("wav", R.drawable.ic_file_wav)
         put("wmv", R.drawable.ic_file_wmv)
         put("xls", R.drawable.ic_file_xls)
+        put("xlsx", R.drawable.ic_file_xls)
         put("xml", R.drawable.ic_file_xml)
         put("zip", R.drawable.ic_file_zip)
     }.forEach { (key, value) ->

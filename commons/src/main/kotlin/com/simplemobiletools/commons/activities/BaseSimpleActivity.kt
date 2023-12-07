@@ -75,11 +75,13 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     private val RECOVERABLE_SECURITY_HANDLER = 301
     private val UPDATE_FILE_SDK_30_HANDLER = 302
     private val MANAGE_MEDIA_RC = 303
+    private val TRASH_FILE_SDK_30_HANDLER = 304
 
     companion object {
         var funAfterSAFPermission: ((success: Boolean) -> Unit)? = null
         var funAfterSdk30Action: ((success: Boolean) -> Unit)? = null
         var funAfterUpdate30File: ((success: Boolean) -> Unit)? = null
+        var funAfterTrash30File: ((success: Boolean) -> Unit)? = null
         var funRecoverableSecurity: ((success: Boolean) -> Unit)? = null
         var funAfterManageMediaPermission: (() -> Unit)? = null
     }
@@ -344,6 +346,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         if (toolbarNavigationIcon != NavigationIcon.None) {
             val drawableId = if (toolbarNavigationIcon == NavigationIcon.Cross) R.drawable.ic_cross_vector else R.drawable.ic_arrow_left_vector
             toolbar.navigationIcon = resources.getColoredDrawableWithColor(drawableId, contrastColor)
+            toolbar.setNavigationContentDescription(toolbarNavigationIcon.accessibilityResId)
         }
 
         toolbar.setNavigationOnClickListener {
@@ -577,6 +580,8 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
             funAfterUpdate30File?.invoke(resultCode == Activity.RESULT_OK)
         } else if (requestCode == MANAGE_MEDIA_RC) {
             funAfterManageMediaPermission?.invoke()
+        } else if (requestCode == TRASH_FILE_SDK_30_HANDLER) {
+            funAfterTrash30File?.invoke(resultCode == Activity.RESULT_OK)
         }
     }
 
@@ -657,14 +662,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
                 startActivity(this)
             }
         } catch (e: Exception) {
-            try {
-                Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-                    data = Uri.fromParts("package", packageName, null)
-                    startActivity(this)
-                }
-            } catch (e: Exception) {
-                showErrorToast(e)
-            }
+            openDeviceSettings()
         }
     }
 
@@ -771,6 +769,22 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
             try {
                 val deleteRequest = MediaStore.createDeleteRequest(contentResolver, uris).intentSender
                 startIntentSenderForResult(deleteRequest, DELETE_FILE_SDK_30_HANDLER, null, 0, 0, 0)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
+        } else {
+            callback(false)
+        }
+    }
+
+    @SuppressLint("NewApi")
+    fun trashSDK30Uris(uris: List<Uri>, toTrash: Boolean, callback: (success: Boolean) -> Unit) {
+        hideKeyboard()
+        if (isRPlus()) {
+            funAfterTrash30File = callback
+            try {
+                val trashRequest = MediaStore.createTrashRequest(contentResolver, uris, toTrash).intentSender
+                startIntentSenderForResult(trashRequest, TRASH_FILE_SDK_30_HANDLER, null, 0, 0, 0)
             } catch (e: Exception) {
                 showErrorToast(e)
             }
@@ -959,7 +973,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
                     if (granted) {
                         CopyMoveTask(this, isCopyOperation, copyPhotoVideoOnly, it, copyMoveListener, copyHidden).execute(pair)
                     } else {
-                        PermissionRequiredDialog(this, R.string.allow_notifications_files)
+                        PermissionRequiredDialog(this, R.string.allow_notifications_files, { openNotificationSettings() })
                     }
                 }
             }
@@ -1010,6 +1024,27 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
             isAskingPermissions = true
             actionOnPermission = callback
             ActivityCompat.requestPermissions(this, arrayOf(getPermissionString(permissionId)), GENERIC_PERM_HANDLER)
+        }
+    }
+
+    fun handlePartialMediaPermissions(permissionIds: Collection<Int>, force: Boolean = false, callback: (granted: Boolean) -> Unit) {
+        actionOnPermission = null
+        if (isUpsideDownCakePlus()) {
+            if (hasPermission(PERMISSION_READ_MEDIA_VISUAL_USER_SELECTED) && !force) {
+                callback(true)
+            } else {
+                isAskingPermissions = true
+                actionOnPermission = callback
+                ActivityCompat.requestPermissions(this, permissionIds.map { getPermissionString(it) }.toTypedArray(), GENERIC_PERM_HANDLER)
+            }
+        } else {
+            if (hasAllPermissions(permissionIds)) {
+                callback(true)
+            } else {
+                isAskingPermissions = true
+                actionOnPermission = callback
+                ActivityCompat.requestPermissions(this, permissionIds.map { getPermissionString(it) }.toTypedArray(), GENERIC_PERM_HANDLER)
+            }
         }
     }
 
